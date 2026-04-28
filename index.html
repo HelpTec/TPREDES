@@ -1,1041 +1,1499 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redes & Tecnología</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes & Tecnología</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">// REDES TP</div>
-  <div class="nav-links">
-    <a href="#vlan">VLAN</a>
-    <a href="#vpn">VPN</a>
-    <a href="#san">SAN</a>
-    <a href="#dispositivos">Dispositivos</a>
-    <a href="#protocolos">Protocolos</a>
-    <a href="#tcpip">TCP/IP</a>
-    <a href="#paquete">Paquete</a>
-    <a href="#geografia">Geografía</a>
-    <a href="#topologia">Topología</a>
-    <a href="#dhcp">DHCP</a>
-    <a href="#dns">DNS</a>
-    <a href="#wireless">Wireless</a>
-    <a href="#proxy">Proxy</a>
-    <a href="#stp">STP</a>
-    <a href="#ospf">OSPF</a>
-    <a href="#arp">ARP</a>
-    <a href="#firewall">Firewall</a>
-    <a href="#dmz">DMZ</a>
-    <a href="#gateway">Gateway</a>
-    <a href="#enlaces">Enlaces</a>
-    <a href="#lte">LTE</a>
-    <a href="#teams">Teams/QoS</a>
-    <a href="#cables">Cables</a>
-    <a href="#cisco">Cisco</a>
-    <a href="#osi">OSI</a>
-    <a href="#ieee">IEEE</a>
-    <a href="#correo">Correo</a>
-    <a href="#ipv">IPv4 vs IPv6</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">// REDES TP</div>
+    <div class="nav-links">
+      <a href="#vlan">VLAN</a>
+      <a href="#vpn">VPN</a>
+      <a href="#san">SAN</a>
+      <a href="#dispositivos">Dispositivos</a>
+      <a href="#protocolos">Protocolos</a>
+      <a href="#tcpip">TCP/IP</a>
+      <a href="#paquete">Paquete</a>
+      <a href="#geografia">Geografía</a>
+      <a href="#topologia">Topología</a>
+      <a href="#dhcp">DHCP</a>
+      <a href="#dns">DNS</a>
+      <a href="#wireless">Wireless</a>
+      <a href="#proxy">Proxy</a>
+      <a href="#stp">STP</a>
+      <a href="#ospf">OSPF</a>
+      <a href="#arp">ARP</a>
+      <a href="#firewall">Firewall</a>
+      <a href="#dmz">DMZ</a>
+      <a href="#gateway">Gateway</a>
+      <a href="#enlaces">Enlaces</a>
+      <a href="#lte">LTE</a>
+      <a href="#teams">Teams/QoS</a>
+      <a href="#cables">Cables</a>
+      <a href="#cisco">Cisco</a>
+      <a href="#osi">OSI</a>
+      <a href="#ieee">IEEE</a>
+      <a href="#correo">Correo</a>
+      <a href="#ipv">IPv4 vs IPv6</a>
+      <a href="#experiencia-personal">Exp. Personal</a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section id="hero" style="max-width:none; padding:0;">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-content">
-    <div class="hero-tag">Trabajo Práctico · Redes y Tecnología <br> Leonel Rodriguez <br> Diego Amezaga <br> Cristian Ozuna
-    </div>
-    <h1 class="hero-title">Conceptos<br>de Redes</h1>
-    <p class="hero-sub">VLAN · VPN · TCP/IP · Topologías · Wireless · Firewall · OSI · IPv6 y más — presentación interactiva</p>
-    <div class="hero-scroll">
-      <div>SCROLL</div>
-      <div class="scroll-line"></div>
-    </div>
-  </div>
-</section>
-
-<!-- VLAN -->
-<section id="vlan">
-  <div class="fade-in">
-    <div class="section-label">01 — Virtualización de Red</div>
-    <h2 class="section-title">¿Qué es una <span>VLAN</span>?</h2>
-    <div class="divider"></div>
-    <div class="highlight">
-      <h3>Definición</h3>
-      <p>Una VLAN es una red lógica que agrupa dispositivos conectados físicamente a una misma red local, segmentándolos para formar redes independientes. Mejora la seguridad, gestiona el tráfico de forma eficiente y simplifica la administración.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Seguridad</h3>
-        <p>Aísla departamentos y tipos de tráfico, evitando que se interfieran entre sí.</p>
+  <!-- HERO -->
+  <section id="hero" style="max-width:none; padding:0;">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag">Trabajo Práctico · Redes y Tecnología <br> Leonel Rodriguez <br> Diego Amezaga <br> Cristian
+        Ozuna
       </div>
-      <div class="card">
-        <div class="card-icon">⚡</div>
-        <h3>Eficiencia</h3>
-        <p>Gestiona el tráfico de forma más eficiente mejorando el rendimiento general de la red.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🏷️</div>
-        <h3>VLAN ID</h3>
-        <p>Opera en la Capa 2 del modelo OSI etiquetando tramas con identificadores únicos llamados VLAN IDs.</p>
+      <h1 class="hero-title">Conceptos<br>de Redes</h1>
+      <p class="hero-sub">VLAN · VPN · TCP/IP · Topologías · Wireless · Firewall · OSI · IPv6 y más — presentación
+        interactiva</p>
+      <div class="hero-scroll">
+        <div>SCROLL</div>
+        <div class="scroll-line"></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- VPN -->
-<section id="vpn">
-  <div class="fade-in">
-    <div class="section-label">02 — Privacidad</div>
-    <h2 class="section-title">¿Qué es una <span>VPN</span>?</h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;font-size:.95rem;">Una VPN establece una conexión de red privada entre dispositivos a través de Internet, permitiendo transmitir datos de forma segura y anónima sobre redes públicas. Enmascara las IPs y cifra los datos haciéndolos ilegibles para terceros.</p>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">👁️</div>
-        <h3>Privacidad</h3>
-        <p>Oculta la actividad del usuario y su dirección IP real ante terceros en la red.</p>
+  <!-- VLAN -->
+  <section id="vlan">
+    <div class="fade-in">
+      <div class="section-label">01 — Virtualización de Red</div>
+      <h2 class="section-title">¿Qué es una <span>VLAN</span>?</h2>
+      <div class="divider"></div>
+      <div class="highlight">
+        <h3>Definición</h3>
+        <p>Una VLAN es una red lógica que agrupa dispositivos conectados físicamente a una misma red local,
+          segmentándolos para formar redes independientes. Mejora la seguridad, gestiona el tráfico de forma eficiente y
+          simplifica la administración.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">🕵️</div>
-        <h3>Anonimato</h3>
-        <p>Enmascara la identidad digital del usuario durante la navegación y transferencia de datos.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🛡️</div>
-        <h3>Seguridad</h3>
-        <p>Cifra los datos durante la transmisión, protegiéndolos de accesos no autorizados.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SAN -->
-<section id="san">
-  <div class="fade-in">
-    <div class="section-label">03 — Almacenamiento</div>
-    <h2 class="section-title">¿Qué es una <span>SAN</span>?</h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="align-items:start;">
-      <div>
-        <div class="highlight">
-          <h3>Storage Area Network</h3>
-          <p>Red de alta velocidad que conecta servidores con dispositivos de almacenamiento. Centraliza el almacenamiento en bloques permitiendo a las organizaciones almacenar datos en un pool compartido.</p>
-        </div>
-        <div class="highlight">
-          <h3>LUN — Logical Unit Numbers</h3>
-          <p>Los datos se almacenan en unidades lógicas (LUN). Los servidores los ven como discos locales: los particionan, formatean y usan para almacenar datos.</p>
-        </div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <!-- SVG SAN diagram -->
-        <svg viewBox="0 0 280 260" style="width:100%;max-width:280px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <!-- Servers -->
-          <rect x="10" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-          <text x="45" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
-          <text x="45" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">01</text>
-          <rect x="100" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-          <text x="135" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
-          <text x="135" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">02</text>
-          <rect x="190" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-          <text x="225" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
-          <text x="225" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">03</text>
-          <!-- SAN Switch -->
-          <rect x="80" y="110" width="110" height="40" rx="8" fill="#131d2e" stroke="#7b61ff" stroke-width="2"/>
-          <text x="135" y="135" text-anchor="middle" fill="#7b61ff" font-size="9" font-family="monospace" font-weight="bold">SAN SWITCH</text>
-          <!-- Storage -->
-          <rect x="30" y="200" width="200" height="45" rx="8" fill="#131d2e" stroke="#00ff94" stroke-width="1.5"/>
-          <text x="130" y="220" text-anchor="middle" fill="#00ff94" font-size="9" font-family="monospace">STORAGE POOL</text>
-          <text x="130" y="235" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">LUN · LUN · LUN · LUN</text>
-          <!-- Lines -->
-          <line x1="45" y1="60" x2="110" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="135" y1="60" x2="135" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="225" y1="60" x2="160" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="135" y1="150" x2="135" y2="200" stroke="#7b61ff" stroke-width="1.5" stroke-dasharray="4,3" opacity=".8"/>
-        </svg>
-        <p style="font-size:.78rem;color:var(--text-muted);margin-top:.8rem;">Arquitectura típica de una SAN</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DISPOSITIVOS -->
-<section id="dispositivos">
-  <div class="fade-in">
-    <div class="section-label">04 — Hardware de Red</div>
-    <h2 class="section-title">Hub, Repetidor, <span>Switch & Router</span></h2>
-    <div class="divider"></div>
-
-    <!-- 3D Model -->
-    <div style="margin-bottom:2rem;">
-      <canvas id="model-canvas"></canvas>
-      <div class="model-controls">
-        <button class="model-btn active" onclick="setModel('router')">🔀 Router</button>
-        <button class="model-btn" onclick="setModel('switch')">🔄 Switch</button>
-        <button class="model-btn" onclick="setModel('hub')">📡 Hub</button>
-        <button class="model-btn" onclick="setModel('repeater')">📶 Repetidor</button>
-      </div>
-      <p id="model-desc" style="font-size:.85rem;color:var(--text-muted);margin-top:.8rem;line-height:1.6;"></p>
-    </div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Dispositivo</th>
-            <th>Capa OSI</th>
-            <th>Función Principal</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span style="color:var(--text);font-weight:600;">Hub</span></td>
-            <td><span class="chip">Capa 1</span></td>
-            <td>Replica datos a todos los puertos sin filtrar</td>
-            <td style="color:#ff6b6b;">Obsoleto</td>
-          </tr>
-          <tr>
-            <td><span style="color:var(--text);font-weight:600;">Repetidor</span></td>
-            <td><span class="chip">Capa 1</span></td>
-            <td>Regenera y retransmite señales degradadas</td>
-            <td style="color:#ffa94d;">Limitado</td>
-          </tr>
-          <tr>
-            <td><span style="color:var(--text);font-weight:600;">Switch</span></td>
-            <td><span class="chip">Capa 2</span></td>
-            <td>Dirige datos al destino exacto por MAC address</td>
-            <td style="color:var(--accent3);">Estándar</td>
-          </tr>
-          <tr>
-            <td><span style="color:var(--text);font-weight:600;">Router</span></td>
-            <td><span class="chip">Capa 3</span></td>
-            <td>Interconecta redes distintas usando direcciones IP</td>
-            <td style="color:var(--accent3);">Estándar</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- PROTOCOLOS -->
-<section id="protocolos">
-  <div class="fade-in">
-    <div class="section-label">05 — Comunicación</div>
-    <h2 class="section-title">Protocolos de <span>Comunicación</span></h2>
-    <div class="divider"></div>
-    <div class="highlight" style="margin-bottom:2rem;">
-      <h3>¿Qué es un protocolo?</h3>
-      <p>Conjunto de reglas, normas y procedimientos estandarizados que permiten a dos o más dispositivos conectarse, intercambiar información y entenderse en una red. Definen el formato de mensajes y gestionan la detección de errores.</p>
-    </div>
-    <div class="grid-4">
-      <div class="card">
-        <div class="flag-name">TCP/IP</div>
-        <p style="font-size:.8rem;color:var(--text-muted);">Protocolo fundamental de Internet para transmisión de paquetes.</p>
-      </div>
-      <div class="card">
-        <div class="flag-name">HTTP/S</div>
-        <p style="font-size:.8rem;color:var(--text-muted);">Transferencia de información en sitios web (S = cifrado).</p>
-      </div>
-      <div class="card">
-        <div class="flag-name">FTP</div>
-        <p style="font-size:.8rem;color:var(--text-muted);">Orientado a la transferencia de archivos entre sistemas.</p>
-      </div>
-      <div class="card">
-        <div class="flag-name">SMTP</div>
-        <p style="font-size:.8rem;color:var(--text-muted);">Utilizado para el envío de correos electrónicos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TCP/IP vs NetBIOS -->
-<section id="tcpip">
-  <div class="fade-in">
-    <div class="section-label">06 — Comparativa</div>
-    <h2 class="section-title"><span>TCP/IP</span> vs NetBIOS</h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="margin-bottom:2rem;">
-      <div class="card" style="border-color:rgba(0,229,255,.3);">
-        <div style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">TCP/IP</div>
-        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Conjunto completo de protocolos para comunicación global incluyendo Internet. Usa direcciones IP. Permite comunicación entre redes diferentes. Es el estándar universal actual organizado en capas: acceso a red, internet, transporte y aplicación.</p>
-      </div>
-      <div class="card" style="border-color:rgba(123,97,255,.3);">
-        <div style="color:var(--accent2);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">NetBIOS</div>
-        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Interfaz orientada a redes locales. Usa nombres de red para identificar dispositivos. No es un protocolo completo por sí mismo, depende de otros (ej: NetBT sobre TCP/IP). Fue ampliamente usado en redes Windows antiguas. Actualmente en desuso.</p>
-      </div>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Característica</th><th>TCP/IP</th><th>NetBIOS</th></tr></thead>
-        <tbody>
-          <tr><td>Identificación</td><td>Direcciones IP</td><td>Nombres de red</td></tr>
-          <tr><td>Alcance</td><td>Global (Internet)</td><td>Redes locales (LAN)</td></tr>
-          <tr><td>Autonomía</td><td>Protocolo completo</td><td>Depende de otros protocolos</td></tr>
-          <tr><td>Estado</td><td style="color:var(--accent3);">Estándar actual</td><td style="color:#ff6b6b;">En desuso</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- PAQUETE TCP/IP -->
-<section id="paquete">
-  <div class="fade-in">
-    <div class="section-label">07 — Estructura de Datos</div>
-    <h2 class="section-title">Paquete <span>TCP/IP</span> & Flags</h2>
-    <div class="divider"></div>
-
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.75;margin-bottom:2rem;">Cada paquete TCP/IP está formado por capas de encabezados envueltos unos dentro de otros (encapsulación). El encabezado IP actúa como columna vertebral, mientras que el payload es el corazón donde reside la información valiosa.</p>
-
-    <div style="margin-bottom:2.5rem;">
-      <div class="packet-layer" style="background:rgba(0,229,255,.07); border:1px solid rgba(0,229,255,.2);">
-        <div class="layer-name" style="color:var(--text-muted);">Ethernet</div>
-        <div class="layer-fields">
-          <span class="field">MAC Origen</span><span class="field">MAC Destino</span><span class="field">EtherType</span><span class="field">FCS</span>
-        </div>
-      </div>
-      <div class="packet-layer" style="background:rgba(123,97,255,.07); border:1px solid rgba(123,97,255,.2); margin-left:1.5rem;">
-        <div class="layer-name" style="color:#a78bfa;">IP Header</div>
-        <div class="layer-fields">
-          <span class="field">IP Origen</span><span class="field">IP Destino</span><span class="field">TTL</span><span class="field">Protocolo</span><span class="field">Checksum</span>
-        </div>
-      </div>
-      <div class="packet-layer" style="background:rgba(0,255,148,.07); border:1px solid rgba(0,255,148,.2); margin-left:3rem;">
-        <div class="layer-name" style="color:var(--accent3);">TCP Header</div>
-        <div class="layer-fields">
-          <span class="field">Puerto Orig</span><span class="field">Puerto Dest</span><span class="field">Nº Sec</span><span class="field">ACK</span><span class="field">Flags</span><span class="field">Checksum</span>
-        </div>
-      </div>
-      <div class="packet-layer" style="background:rgba(255,200,0,.07); border:1px solid rgba(255,200,0,.2); margin-left:4.5rem;">
-        <div class="layer-name" style="color:#ffd43b;">Payload</div>
-        <div class="layer-fields">
-          <span class="field">Datos de Aplicación (HTTP, DNS, SSH…)</span>
-        </div>
-      </div>
-    </div>
-
-    <h3 style="margin-bottom:1.2rem;font-size:1.1rem;">Flags TCP</h3>
-    <div class="grid-3">
-      <div class="flag-card"><div class="flag-name">SYN</div><div class="flag-desc">Inicia una nueva conexión TCP (handshake)</div></div>
-      <div class="flag-card"><div class="flag-name">ACK</div><div class="flag-desc">Confirma que el campo de acuse de recibo es válido</div></div>
-      <div class="flag-card"><div class="flag-name">FIN</div><div class="flag-desc">Finaliza la conexión TCP de forma ordenada</div></div>
-      <div class="flag-card"><div class="flag-name">RST</div><div class="flag-desc">Reinicia la conexión TCP abruptamente</div></div>
-      <div class="flag-card"><div class="flag-name">PSH</div><div class="flag-desc">Envía datos al usuario tan pronto como se reciban</div></div>
-      <div class="flag-card"><div class="flag-name">URG</div><div class="flag-desc">El segmento contiene datos urgentes a procesar de inmediato</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- GEOGRAFÍA -->
-<section id="geografia">
-  <div class="fade-in">
-    <div class="section-label">08 — Clasificación Geográfica</div>
-    <h2 class="section-title">Redes según su <span>Geografía</span></h2>
-    <div class="divider"></div>
-
-    <!-- Concentric rings visual -->
-    <div style="position:relative; width:360px; height:360px; margin: 2rem auto; background: #080c14; border-radius: 20px; padding: 20px; box-sizing: content-box;">
-  
-  <div style="position:relative; width:100%; height:100%;">
-
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:350px; height:350px; border-radius:50%; background:rgba(255,107,107,.02); border:2px dashed rgba(255,107,107,.3); z-index:1;"></div>
-    <div style="position:absolute; bottom:8%; right:12%; font-family:'Space Mono',monospace; font-size:10px; color:#ff6b6b; font-weight:700; z-index:10; text-align:right;">GAN<br><span style="font-weight:400; opacity:0.8;">Global</span></div>
-
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; border-radius:50%; background:rgba(123,97,255,.04); border:2px solid rgba(123,97,255,.4); z-index:2;"></div>
-    <div style="position:absolute; top:18%; right:22%; font-family:'Space Mono',monospace; font-size:10px; color:#a78bfa; font-weight:700; z-index:10;">WAN<br><span style="font-weight:400; opacity:0.8;">+1000km</span></div>
-
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:210px; height:210px; border-radius:50%; background:rgba(0,229,255,.05); border:2px solid rgba(0,229,255,.5); z-index:3;"></div>
-    <div style="position:absolute; top:35%; left:25%; font-family:'Space Mono',monospace; font-size:10px; color:#00e5ff; font-weight:700; z-index:10;">MAN<br><span style="font-weight:400; opacity:0.8;">10-100km</span></div>
-
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:140px; height:140px; border-radius:50%; background:rgba(0,255,148,.06); border:2px solid #00ff94; z-index:4;"></div>
-    <div style="position:absolute; bottom:35%; left:38%; font-family:'Space Mono',monospace; font-size:9px; color:#00ff94; font-weight:700; z-index:10;">LAN<br><span style="font-weight:400; opacity:0.8;">100m-1km</span></div>
-
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:70px; height:70px; border-radius:50%; background:rgba(255,212,59,.15); border:2px solid #ffd43b; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:5; box-shadow: 0 0 15px rgba(255,212,59,0.2);">
-      <span style="font-family:'Space Mono',monospace; font-size:11px; color:#ffd43b; font-weight:700; text-align:center;">PAN</span>
-      <span style="font-family:'Space Mono',monospace; font-size:8px; color:#ffd43b; opacity:0.9;">1-10m</span>
-    </div>
-
-  </div>
-</div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div style="color:#ffd43b;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">PAN — Personal</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">1–10 metros. Conecta periféricos personales. Usa Bluetooth y USB.</p>
-      </div>
-      <div class="card">
-        <div style="color:#00ff94;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">LAN — Local</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Edificio u oficina. Alta velocidad y baja latencia. Ethernet / Wi-Fi.</p>
-      </div>
-      <div class="card">
-        <div style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">MAN — Metropolitana</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Cubre una ciudad. Conecta varias LANs. Usa fibra óptica.</p>
-      </div>
-      <div class="card">
-        <div style="color:#a78bfa;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">WAN — Amplia</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Países o continentes. Usa satélites y enlaces dedicados.</p>
-      </div>
-      <div class="card">
-        <div style="color:#ff6b6b;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">GAN — Global</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Escala mundial. Crucial para multinacionales. Telecomunicaciones avanzadas.</p>
-      </div>
-      <div class="card">
-        <div style="color:#ffa94d;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">VPN — Virtual Privada</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Túnel cifrado sobre red pública. Acceso remoto seguro a recursos corporativos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TOPOLOGÍA -->
-<section id="topologia">
-  <div class="fade-in">
-    <div class="section-label">09 — Estructura Física</div>
-    <h2 class="section-title">Topologías de <span>Red</span></h2>
-    <div class="divider"></div>
-    <div class="topo-wrap">
-      <div class="topo-tabs">
-        <button class="topo-tab active" onclick="showTopo('bus',this)">Bus</button>
-        <button class="topo-tab" onclick="showTopo('star',this)">Estrella</button>
-        <button class="topo-tab" onclick="showTopo('ring',this)">Anillo</button>
-        <button class="topo-tab" onclick="showTopo('mesh',this)">Malla</button>
-        <button class="topo-tab" onclick="showTopo('tree',this)">Árbol</button>
-      </div>
-      <div class="topo-canvas-wrap">
-        <canvas class="topo" id="topo-canvas" width="800" height="280"></canvas>
-        <div id="topo-info" style="margin-top:1rem;font-size:.85rem;color:var(--text-muted);line-height:1.7;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DHCP -->
-<section id="dhcp">
-  <div class="fade-in">
-    <div class="section-label">10 — Configuración Dinámica</div>
-    <h2 class="section-title">Servicio <span>DHCP</span></h2>
-    <div class="divider"></div>
-    <div class="highlight" style="margin-bottom:2rem;">
-      <h3>Dynamic Host Configuration Protocol</h3>
-      <p>Asigna automáticamente direcciones IP a cada dispositivo de red (host). Elimina la necesidad de asignaciones manuales por parte de administradores. También asigna: máscaras de subred, puertas de enlace y servidores DNS.</p>
-    </div>
-    <!-- DHCP flow SVG -->
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem;">
-      <svg viewBox="0 0 600 120" style="width:100%;max-width:600px;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Boxes -->
-        <rect x="10" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-        <text x="65" y="55" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="monospace">DISPOSITIVO</text>
-        <text x="65" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Cliente</text>
-
-        <rect x="160" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#7b61ff" stroke-width="1.5"/>
-        <text x="215" y="55" text-anchor="middle" fill="#7b61ff" font-size="9" font-family="monospace">DISCOVER</text>
-        <text x="215" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Broadcast</text>
-
-        <rect x="310" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#00ff94" stroke-width="1.5"/>
-        <text x="365" y="55" text-anchor="middle" fill="#00ff94" font-size="9" font-family="monospace">DHCP SERVER</text>
-        <text x="365" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Ofrece IP</text>
-
-        <rect x="460" y="30" width="120" height="55" rx="8" fill="#0e1622" stroke="#ffd43b" stroke-width="1.5"/>
-        <text x="520" y="48" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace">IP · Gateway</text>
-        <text x="520" y="62" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace">Subnet · DNS</text>
-        <text x="520" y="76" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Configuración</text>
-
-        <!-- Arrows -->
-        <line x1="120" y1="57" x2="160" y2="57" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arr)"/>
-        <line x1="270" y1="57" x2="310" y2="57" stroke="#7b61ff" stroke-width="1.5" marker-end="url(#arr2)"/>
-        <line x1="420" y1="57" x2="460" y2="57" stroke="#00ff94" stroke-width="1.5" marker-end="url(#arr3)"/>
-        <defs>
-          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#00e5ff"/></marker>
-          <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7b61ff"/></marker>
-          <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#00ff94"/></marker>
-        </defs>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- DNS -->
-<section id="dns">
-  <div class="fade-in">
-    <div class="section-label">11 — Resolución de Nombres</div>
-    <h2 class="section-title">Servicio <span>DNS</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">El DNS traduce nombres de host a direcciones IP, funcionando como una agenda telefónica de Internet. Por ejemplo: <span style="color:var(--accent);font-family:'Space Mono',monospace;">www.apple.com → 17.253.207.54</span></p>
-    <div class="grid-2">
-      <div class="card" style="border-color:rgba(0,229,255,.25);">
-        <div class="card-icon">🔄</div>
-        <h3>Servidor DNS Recursivo</h3>
-        <p>Recibe la consulta del cliente y se encarga de buscar la respuesta consultando a otros servidores DNS hasta encontrarla.</p>
-      </div>
-      <div class="card" style="border-color:rgba(0,255,148,.25);">
-        <div class="card-icon">🏛️</div>
-        <h3>Servidor DNS Autoritativo</h3>
-        <p>Contiene la información definitiva sobre un dominio específico. Es la fuente final de verdad para la resolución del nombre.</p>
-      </div>
-    </div>
-
-    <!-- DNS flow -->
-    <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-top:1.5rem;">
-      <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:1rem;">// Flujo de resolución DNS</div>
-      <div style="display:flex;flex-direction:column;gap:.6rem;">
-        <div style="display:flex;align-items:center;gap:1rem;"><span style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">1.</span><span style="font-size:.88rem;color:var(--text-muted);">Usuario escribe <code style="color:var(--accent);">www.ejemplo.com</code> en el navegador</span></div>
-        <div style="display:flex;align-items:center;gap:1rem;"><span style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">2.</span><span style="font-size:.88rem;color:var(--text-muted);">El SO consulta al <strong style="color:var(--text);">Servidor DNS Recursivo</strong></span></div>
-        <div style="display:flex;align-items:center;gap:1rem;"><span style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">3.</span><span style="font-size:.88rem;color:var(--text-muted);">El recursivo consulta al <strong style="color:var(--text);">Servidor DNS Autoritativo</strong></span></div>
-        <div style="display:flex;align-items:center;gap:1rem;"><span style="color:var(--accent3);font-family:'Space Mono',monospace;min-width:24px;">4.</span><span style="font-size:.88rem;color:var(--text-muted);">Responde con la IP: <code style="color:var(--accent3);">93.184.216.34</code></span></div>
-        <div style="display:flex;align-items:center;gap:1rem;"><span style="color:var(--accent3);font-family:'Space Mono',monospace;min-width:24px;">5.</span><span style="font-size:.88rem;color:var(--text-muted);">El navegador se conecta directamente a esa IP</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WIRELESS -->
-<section id="wireless">
-  <div class="fade-in">
-    <div class="section-label">12 — Comunicaciones Inalámbricas</div>
-    <h2 class="section-title">Tecnologías <span>Wireless</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Se denomina wireless a las tecnologías que transmiten información sin un medio físico guiado, mediante radiofrecuencia. Difieren en alcance, potencia, ancho de banda, latencia y consumo energético.</p>
-    <div class="grid-2">
-      <div class="card" style="border-color:rgba(0,229,255,.25);">
-        <div class="card-icon">📶</div>
-        <h3>Wi-Fi / WLAN — IEEE 802.11</h3>
-        <p>La más difundida en hogares, oficinas y campus. Las generaciones se nombran comercialmente:<br><br>
-          <span class="chip">Wi-Fi 4 = 802.11n</span>
-          <span class="chip">Wi-Fi 5 = 802.11ac</span>
-          <span class="chip">Wi-Fi 6 = 802.11ax</span><br><br>
-          Wi-Fi 6 fue diseñado especialmente para entornos densos con múltiples usuarios.</p>
-      </div>
-      <div class="card" style="border-color:rgba(123,97,255,.25);">
-        <div class="card-icon">🎧</div>
-        <h3>Bluetooth / WPAN</h3>
-        <p>Diseñado para corto alcance y consumo contenido. Ideal para periféricos, audio, wearables y enlaces entre dispositivos personales. Administrado por Bluetooth SIG (históricamente vinculado a IEEE 802.15.1).</p>
-      </div>
-      <div class="card" style="border-color:rgba(0,255,148,.25);">
-        <div class="card-icon">🏠</div>
-        <h3>Zigbee / IoT — IEEE 802.15.4</h3>
-        <p>Muy usado en automatización, sensores y domótica. Privilegia bajo consumo y redes de baja tasa de datos. Permite dispositivos con larga autonomía y topologías tipo malla.</p>
-      </div>
-      <div class="card" style="border-color:rgba(255,212,59,.25);">
-        <div class="card-icon">📡</div>
-        <h3>Redes Móviles: 4G / 5G</h3>
-        <p>Regidas por el ecosistema <strong style="color:var(--text);">3GPP</strong>. Define interfaz de radio, arquitectura de red, movilidad y autenticación. 5G es un sistema completo de telecomunicaciones, no solo "radio más rápida".</p>
-      </div>
-    </div>
-    <div class="highlight" style="margin-top:1.5rem;">
-      <h3>Ejemplo en una universidad</h3>
-      <p>Las notebooks usan <strong style="color:var(--text);">Wi-Fi 6</strong> dentro del campus · Los auriculares del personal usan <strong style="color:var(--text);">Bluetooth</strong> · Los sensores de temperatura en aulas usan <strong style="color:var(--text);">Zigbee</strong> · Los usuarios fuera del edificio usan <strong style="color:var(--text);">4G/5G</strong> del operador.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROXY -->
-<section id="proxy">
-  <div class="fade-in">
-    <div class="section-label">13 — Intermediación de Red</div>
-    <h2 class="section-title">¿Qué es un <span>Proxy</span>?</h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Un proxy es un intermediario que recibe solicitudes de un nodo y las reenvía hacia otro. Su valor técnico está en que <strong style="color:var(--text);">termina o intermedia</strong> la comunicación, permitiendo aplicar políticas, autenticación, caché, anonimización y filtrado.</p>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-icon">→</div>
-        <h3>Forward Proxy</h3>
-        <p>Se ubica del lado del cliente. Los usuarios de una red interna no salen directamente a Internet sino a través del proxy. Permite control, registro, filtrado de navegación y caché de contenido.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">←</div>
-        <h3>Reverse Proxy</h3>
-        <p>Se ubica delante de uno o varios servidores. Los clientes externos creen acceder a un único servicio, pero el proxy reenvía internamente al backend. Permite ocultar servidores, repartir carga y centralizar TLS.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STP -->
-<section id="stp">
-  <div class="fade-in">
-    <div class="section-label">14 — Prevención de Bucles</div>
-    <h2 class="section-title">Protocolo <span>Spanning Tree</span></h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="align-items:start;">
-      <div>
-        <div class="highlight">
-          <h3>IEEE 802.1D — Capa 2 OSI</h3>
-          <p>STP evita bucles lógicos en redes Ethernet con enlaces redundantes. Sin él, una trama broadcast puede circular indefinidamente generando tormentas de broadcast y degradación severa.</p>
-        </div>
-        <div class="highlight">
-          <h3>Funcionamiento</h3>
-          <p>Los switches usan <strong style="color:var(--text);">BPDUs</strong> para elegir un <strong style="color:var(--text);">root bridge</strong>, calcular el mejor camino hacia él y dejar algunos puertos en estado de bloqueo. La topología física mantiene redundancia, pero la lógica queda libre de bucles.</p>
-        </div>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-          <span class="chip">STP — 802.1D</span>
-          <span class="chip">RSTP — más rápido</span>
-          <span class="chip">MSTP — escalable</span>
-        </div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <svg viewBox="0 0 260 200" style="width:100%;max-width:260px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <!-- Root Bridge -->
-          <rect x="90" y="10" width="80" height="36" rx="7" fill="#0e1622" stroke="#ffd43b" stroke-width="2"/>
-          <text x="130" y="28" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace" font-weight="bold">ROOT BRIDGE</text>
-          <text x="130" y="40" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">SW-A</text>
-          <!-- SW-B -->
-          <rect x="20" y="110" width="70" height="30" rx="7" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-          <text x="55" y="130" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SW-B</text>
-          <!-- SW-C -->
-          <rect x="170" y="110" width="70" height="30" rx="7" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5"/>
-          <text x="205" y="130" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SW-C</text>
-          <!-- Active links -->
-          <line x1="110" y1="46" x2="65" y2="110" stroke="#00ff94" stroke-width="2"/>
-          <line x1="150" y1="46" x2="195" y2="110" stroke="#00ff94" stroke-width="2"/>
-          <!-- Blocked link -->
-          <line x1="90" y1="125" x2="170" y2="125" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3"/>
-          <text x="130" y="118" text-anchor="middle" fill="#ff6b6b" font-size="7" font-family="monospace">BLOCKED</text>
-          <!-- Labels -->
-          <text x="66" y="170" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">Active links</text>
-          <circle cx="130" cy="46" r="5" fill="#ffd43b"/>
-        </svg>
-        <p style="font-size:.75rem;color:var(--text-muted);margin-top:.5rem;">STP bloquea el enlace redundante para evitar el loop</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OSPF -->
-<section id="ospf">
-  <div class="fade-in">
-    <div class="section-label">15 — Protocolo de Enrutamiento</div>
-    <h2 class="section-title">Protocolo <span>OSPF</span></h2>
-    <div class="divider"></div>
-    <div class="highlight">
-      <h3>Open Shortest Path First — RFC 2328 — Capa 3</h3>
-      <p>Protocolo de enrutamiento interior (IGP) de tipo <strong style="color:var(--text);">link-state</strong>. Se usa dentro de un mismo sistema autónomo para que los routers compartan información de topología y calculen rutas mediante el algoritmo <strong style="color:var(--text);">SPF (Dijkstra)</strong>.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card">
-        <div class="flag-name">Link-State</div>
-        <div class="flag-desc">Cada router anuncia el estado de sus enlaces y todos construyen una base de datos topológica completa.</div>
-      </div>
-      <div class="card">
-        <div class="flag-name">Algoritmo SPF</div>
-        <div class="flag-desc">Calcula el mejor camino según un costo. Permite decisiones más finas que simplemente contar saltos.</div>
-      </div>
-      <div class="card">
-        <div class="flag-name">Áreas OSPF</div>
-        <div class="flag-desc">Admite segmentación en áreas mejorando escalabilidad en redes medianas o grandes.</div>
-      </div>
-    </div>
-    <div class="highlight" style="margin-top:1.5rem;">
-      <h3>vs STP</h3>
-      <p>STP opera entre <strong style="color:var(--text);">switches</strong> en capa 2 para prevenir loops. OSPF opera entre <strong style="color:var(--text);">routers</strong> en capa 3 para calcular rutas óptimas. Son protocolos complementarios, no equivalentes.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ARP -->
-<section id="arp">
-  <div class="fade-in">
-    <div class="section-label">16 — Resolución de Direcciones</div>
-    <h2 class="section-title">Protocolo <span>ARP</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">ARP (Address Resolution Protocol — RFC 826) permite asociar una dirección lógica IPv4 con una dirección física MAC en Ethernet. Opera dentro del dominio de enlace local, no sirve para encontrar hosts en Internet.</p>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-icon">❓</div>
-        <h3>ARP Request (broadcast)</h3>
-        <p>Cuando un host necesita la MAC de una IP destino y no la tiene en caché, envía un broadcast preguntando: "¿Quién tiene esta IP?"</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">✅</div>
-        <h3>ARP Reply (unicast)</h3>
-        <p>El equipo dueño de esa IP responde con su MAC. La relación IP↔MAC se guarda en caché temporalmente para reutilizarla.</p>
-      </div>
-    </div>
-    <div class="highlight" style="margin-top:1.5rem;">
-      <h3>Relación con DNS y Gateway</h3>
-      <p>DNS responde "qué IP tiene ese nombre". ARP responde "qué MAC tiene el siguiente salto". Si la IP destino no está en la subred local, ARP resuelve la MAC del <strong style="color:var(--text);">gateway predeterminado</strong>, no del servidor remoto.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FIREWALL -->
-<section id="firewall">
-  <div class="fade-in">
-    <div class="section-label">17 — Seguridad de Red</div>
-    <h2 class="section-title">¿Qué es un <span>Firewall</span>?</h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Un firewall filtra, inspecciona y controla el tráfico entrante y saliente según reglas definidas. Actúa como barrera de control entre zonas con distinto nivel de confianza. Puede ser hardware, software en un host, o un servicio administrado.</p>
-    <div class="grid-3">
-      <div class="card">
-        <div class="flag-name">IP Origen/Destino</div>
-        <div class="flag-desc">Permite o bloquea según la dirección IP de origen y destino del paquete.</div>
-      </div>
-      <div class="card">
-        <div class="flag-name">Puerto / Protocolo</div>
-        <div class="flag-desc">Filtra por puerto origen/destino y protocolo (TCP, UDP, ICMP…).</div>
-      </div>
-      <div class="card">
-        <div class="flag-name">Estado de Conexión</div>
-        <div class="flag-desc">Los firewalls stateful inspeccionan el estado de la conexión, no solo el paquete individual.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DMZ -->
-<section id="dmz">
-  <div class="fade-in">
-    <div class="section-label">18 — Zona Perimetral</div>
-    <h2 class="section-title">¿Qué es una <span>DMZ</span>?</h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="align-items:start;">
-      <div>
-        <div class="highlight">
-          <h3>Demilitarized Zone</h3>
-          <p>Red intermedia donde se colocan sistemas que deben recibir conexiones desde redes menos confiables (Internet) sin exponer directamente la red interna. También llamada <strong style="color:var(--text);">screened subnet</strong>.</p>
-        </div>
-        <div class="highlight">
-          <h3>Reglas de Firewall en DMZ</h3>
-          <p>Deben existir reglas muy específicas entre: Internet ↔ DMZ · DMZ ↔ Red interna · Red interna ↔ DMZ. Si un sistema en la DMZ es comprometido, el atacante no debería tener paso libre hacia la LAN interna.</p>
-        </div>
-      </div>
-      <div class="card" style="text-align:center;">
-        <svg viewBox="0 0 220 240" style="width:100%;max-width:220px;margin:0 auto;display:block;" xmlns="http://www.w3.org/2000/svg">
-          <text x="110" y="18" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">INTERNET</text>
-          <rect x="60" y="25" width="100" height="25" rx="5" fill="#0e1622" stroke="#ff6b6b" stroke-width="1.5"/>
-          <text x="110" y="42" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="monospace">FIREWALL</text>
-          <line x1="110" y1="50" x2="110" y2="65" stroke="#6b7fa3" stroke-width="1.5"/>
-          <rect x="40" y="65" width="140" height="50" rx="8" fill="rgba(255,107,107,.06)" stroke="rgba(255,107,107,.35)" stroke-width="1.5" stroke-dasharray="5,3"/>
-          <text x="110" y="84" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="monospace" font-weight="bold">DMZ</text>
-          <rect x="70" y="90" width="80" height="20" rx="5" fill="#0e1622" stroke="#ffa94d" stroke-width="1.5"/>
-          <text x="110" y="104" text-anchor="middle" fill="#ffa94d" font-size="7" font-family="monospace">Reverse Proxy</text>
-          <line x1="110" y1="115" x2="110" y2="130" stroke="#6b7fa3" stroke-width="1.5"/>
-          <rect x="60" y="130" width="100" height="25" rx="5" fill="#0e1622" stroke="#ff6b6b" stroke-width="1.5"/>
-          <text x="110" y="147" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="monospace">FIREWALL</text>
-          <line x1="110" y1="155" x2="110" y2="170" stroke="#6b7fa3" stroke-width="1.5"/>
-          <rect x="30" y="170" width="160" height="50" rx="8" fill="rgba(0,229,255,.06)" stroke="rgba(0,229,255,.35)" stroke-width="1.5"/>
-          <text x="110" y="192" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace" font-weight="bold">RED INTERNA (LAN)</text>
-          <text x="110" y="208" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">Servidores · Usuarios</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GATEWAY -->
-<section id="gateway">
-  <div class="fade-in">
-    <div class="section-label">19 — Punto de Salida</div>
-    <h2 class="section-title">¿Qué es un <span>Gateway</span>?</h2>
-    <div class="divider"></div>
-    <div class="highlight">
-      <h3>Default Gateway</h3>
-      <p>En el contexto IP, el gateway es el punto de salida hacia otra red. Normalmente es un router o interfaz de router al que los hosts envían tráfico destinado a redes remotas. Un host compara la IP destino con su subred: si el destino no pertenece a la misma red, envía el paquete al gateway predeterminado.</p>
-    </div>
-    <div class="card" style="margin-top:1.5rem;">
-      <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:.8rem;">// Ejemplo</div>
-      <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Una PC con IP <code style="color:var(--accent);">192.168.1.50/24</code> quiere llegar a <code style="color:var(--accent);">8.8.8.8</code>. Como esa IP no pertenece a <code style="color:var(--accent);">192.168.1.0/24</code>, no intenta buscarlo directamente. En cambio, resuelve por <strong style="color:var(--text);">ARP</strong> la MAC del gateway <code style="color:var(--accent3);">192.168.1.1</code> y le entrega el paquete para que lo enrute mediante <strong style="color:var(--text);">OSPF</strong> u otras rutas.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TIPOS DE ENLACE -->
-<section id="enlaces">
-  <div class="fade-in">
-    <div class="section-label">21 — Conectividad WAN</div>
-    <h2 class="section-title">Tipos de <span>Enlace</span></h2>
-    <div class="divider"></div>
-    <div class="grid-2" style="margin-bottom:1.5rem;">
-      <div class="card"><div class="card-icon">🏷️</div><h3>MPLS</h3><p>Tecnología de transporte usada por operadores para enrutar tráfico mediante labels. Ofrece control de calidad de servicio, rutas predecibles y acuerdos de servicio estrictos. Ideal para empresas con muchas sedes y tráfico crítico.</p></div>
-      <div class="card"><div class="card-icon">🔒</div><h3>LAN to LAN (Site-to-Site VPN)</h3><p>Enlace lógico entre dos redes LAN mediante túneles VPN cifrados sobre Internet. Los hosts de una LAN se comunican con la otra sin exponer tráfico en claro. Bajo costo, sin contratar red privada del carrier.</p></div>
-      <div class="card"><div class="card-icon">📡</div><h3>Microonda</h3><p>Enlace inalámbrico punto a punto mediante radiofrecuencia terrestre. Requiere línea de vista entre antenas. Baja latencia y buena capacidad. Ideal para unir dos edificios o campus donde tender fibra es costoso.</p></div>
-      <div class="card"><div class="card-icon">🛰️</div><h3>VSAT</h3><p>Enlace satelital mediante terminales de pequeña apertura. Su gran ventaja es la cobertura geográfica extrema: llega donde los medios terrestres no llegan. Usado en sitios rurales, minas, pozos y operaciones temporales.</p></div>
-      <div class="card"><div class="card-icon">💡</div><h3>Fibra Dedicada / EPL</h3><p>Enlace privado punto a punto con ancho de banda reservado, baja latencia y alta previsibilidad. El proveedor entrega una conexión de capa 2 con SLA estrictos. Ideal para interconexión sede ↔ data center.</p></div>
-      <div class="card"><div class="card-icon">📱</div><h3>LTE/4G Fijo</h3><p>Enlace WAN sobre red celular LTE. Muy rápido de desplegar si hay cobertura. Útil para sucursales pequeñas, enlaces de respaldo o sitios temporales sin infraestructura fija.</p></div>
-    </div>
-
-    <!-- Ranking table -->
-    <h3 style="margin-bottom:1rem;font-size:1rem;color:var(--accent);">// Ranking comparativo (1 = mejor)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Enlace</th><th>Económico</th><th>Performance</th><th>Capacidad</th><th>Políticas</th><th>Distancia</th><th>Configuración</th></tr></thead>
-        <tbody>
-          <tr><td style="color:var(--text);font-weight:600;">LAN to LAN (VPN)</td><td style="color:#00ff94;">1</td><td>5</td><td>5</td><td>4</td><td>4</td><td>3</td></tr>
-          <tr><td style="color:var(--text);font-weight:600;">LTE/4G fijo</td><td style="color:#00e5ff;">2</td><td>4</td><td>4</td><td>5</td><td>3</td><td style="color:#00ff94;">1</td></tr>
-          <tr><td style="color:var(--text);font-weight:600;">Microonda</td><td>3</td><td>3</td><td>3</td><td>6</td><td>5</td><td>4</td></tr>
-          <tr><td style="color:var(--text);font-weight:600;">VSAT</td><td style="color:#ff6b6b;">6</td><td style="color:#ff6b6b;">6</td><td style="color:#ff6b6b;">6</td><td>3</td><td style="color:#00ff94;">1</td><td>5</td></tr>
-          <tr><td style="color:var(--text);font-weight:600;">MPLS</td><td>5</td><td style="color:#00e5ff;">2</td><td style="color:#00e5ff;">2</td><td style="color:#00e5ff;">2</td><td style="color:#00e5ff;">2</td><td style="color:#ff6b6b;">6</td></tr>
-          <tr><td style="color:var(--text);font-weight:600;">Fibra / EPL</td><td>4</td><td style="color:#00ff94;">1</td><td style="color:#00ff94;">1</td><td style="color:#00ff94;">1</td><td style="color:#ff6b6b;">6</td><td style="color:#00e5ff;">2</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div style="margin-top:1.5rem;">
-      <h3 style="font-size:1rem;color:var(--accent);margin-bottom:1rem;">// Elección por escenario</h3>
       <div class="grid-3">
-        <div class="card" style="border-color:rgba(123,97,255,.3);">
-          <div style="color:#a78bfa;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO 1</div>
-          <h3>Call Centers → Data Center</h3>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">MPLS</span> — Estabilidad, calidad de voz, priorización de tráfico y acuerdos de servicio definidos.</p>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Seguridad</h3>
+          <p>Aísla departamentos y tipos de tráfico, evitando que se interfieran entre sí.</p>
         </div>
-        <div class="card" style="border-color:rgba(255,107,107,.3);">
-          <div style="color:#ff6b6b;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO 2</div>
-          <h3>Pozos Petroleros (15 min/día)</h3>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">VSAT</span> — Sitios remotos aislados, sin infraestructura terrestre. Cobertura geográfica extrema.</p>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Eficiencia</h3>
+          <p>Gestiona el tráfico de forma más eficiente mejorando el rendimiento general de la red.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3>VLAN ID</h3>
+          <p>Opera en la Capa 2 del modelo OSI etiquetando tramas con identificadores únicos llamados VLAN IDs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VPN -->
+  <section id="vpn">
+    <div class="fade-in">
+      <div class="section-label">02 — Privacidad</div>
+      <h2 class="section-title">¿Qué es una <span>VPN</span>?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:2rem;font-size:.95rem;">Una VPN establece una
+        conexión de red privada entre dispositivos a través de Internet, permitiendo transmitir datos de forma segura y
+        anónima sobre redes públicas. Enmascara las IPs y cifra los datos haciéndolos ilegibles para terceros.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">👁️</div>
+          <h3>Privacidad</h3>
+          <p>Oculta la actividad del usuario y su dirección IP real ante terceros en la red.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🕵️</div>
+          <h3>Anonimato</h3>
+          <p>Enmascara la identidad digital del usuario durante la navegación y transferencia de datos.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Seguridad</h3>
+          <p>Cifra los datos durante la transmisión, protegiéndolos de accesos no autorizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAN -->
+  <section id="san">
+    <div class="fade-in">
+      <div class="section-label">03 — Almacenamiento</div>
+      <h2 class="section-title">¿Qué es una <span>SAN</span>?</h2>
+      <div class="divider"></div>
+      <div class="grid-2" style="align-items:start;">
+        <div>
+          <div class="highlight">
+            <h3>Storage Area Network</h3>
+            <p>Red de alta velocidad que conecta servidores con dispositivos de almacenamiento. Centraliza el
+              almacenamiento en bloques permitiendo a las organizaciones almacenar datos en un pool compartido.</p>
+          </div>
+          <div class="highlight">
+            <h3>LUN — Logical Unit Numbers</h3>
+            <p>Los datos se almacenan en unidades lógicas (LUN). Los servidores los ven como discos locales: los
+              particionan, formatean y usan para almacenar datos.</p>
+          </div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <!-- SVG SAN diagram -->
+          <svg viewBox="0 0 280 260" style="width:100%;max-width:280px;margin:0 auto;display:block;"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Servers -->
+            <rect x="10" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+            <text x="45" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
+            <text x="45" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">01</text>
+            <rect x="100" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+            <text x="135" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
+            <text x="135" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">02</text>
+            <rect x="190" y="10" width="70" height="50" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+            <text x="225" y="30" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SERVER</text>
+            <text x="225" y="45" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">03</text>
+            <!-- SAN Switch -->
+            <rect x="80" y="110" width="110" height="40" rx="8" fill="#131d2e" stroke="#7b61ff" stroke-width="2" />
+            <text x="135" y="135" text-anchor="middle" fill="#7b61ff" font-size="9" font-family="monospace"
+              font-weight="bold">SAN SWITCH</text>
+            <!-- Storage -->
+            <rect x="30" y="200" width="200" height="45" rx="8" fill="#131d2e" stroke="#00ff94" stroke-width="1.5" />
+            <text x="130" y="220" text-anchor="middle" fill="#00ff94" font-size="9" font-family="monospace">STORAGE
+              POOL</text>
+            <text x="130" y="235" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">LUN · LUN ·
+              LUN · LUN</text>
+            <!-- Lines -->
+            <line x1="45" y1="60" x2="110" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3"
+              opacity=".6" />
+            <line x1="135" y1="60" x2="135" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3"
+              opacity=".6" />
+            <line x1="225" y1="60" x2="160" y2="110" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3"
+              opacity=".6" />
+            <line x1="135" y1="150" x2="135" y2="200" stroke="#7b61ff" stroke-width="1.5" stroke-dasharray="4,3"
+              opacity=".8" />
+          </svg>
+          <p style="font-size:.78rem;color:var(--text-muted);margin-top:.8rem;">Arquitectura típica de una SAN</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISPOSITIVOS -->
+  <section id="dispositivos">
+    <div class="fade-in">
+      <div class="section-label">04 — Hardware de Red</div>
+      <h2 class="section-title">Hub, Repetidor, <span>Switch & Router</span></h2>
+      <div class="divider"></div>
+
+      <!-- 3D Model -->
+      <div style="margin-bottom:2rem;">
+        <canvas id="model-canvas"></canvas>
+        <div class="model-controls">
+          <button class="model-btn active" onclick="setModel('router')">🔀 Router</button>
+          <button class="model-btn" onclick="setModel('switch')">🔄 Switch</button>
+          <button class="model-btn" onclick="setModel('hub')">📡 Hub</button>
+          <button class="model-btn" onclick="setModel('repeater')">📶 Repetidor</button>
+        </div>
+        <p id="model-desc" style="font-size:.85rem;color:var(--text-muted);margin-top:.8rem;line-height:1.6;"></p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dispositivo</th>
+              <th>Capa OSI</th>
+              <th>Función Principal</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="color:var(--text);font-weight:600;">Hub</span></td>
+              <td><span class="chip">Capa 1</span></td>
+              <td>Replica datos a todos los puertos sin filtrar</td>
+              <td style="color:#ff6b6b;">Obsoleto</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--text);font-weight:600;">Repetidor</span></td>
+              <td><span class="chip">Capa 1</span></td>
+              <td>Regenera y retransmite señales degradadas</td>
+              <td style="color:#ffa94d;">Limitado</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--text);font-weight:600;">Switch</span></td>
+              <td><span class="chip">Capa 2</span></td>
+              <td>Dirige datos al destino exacto por MAC address</td>
+              <td style="color:var(--accent3);">Estándar</td>
+            </tr>
+            <tr>
+              <td><span style="color:var(--text);font-weight:600;">Router</span></td>
+              <td><span class="chip">Capa 3</span></td>
+              <td>Interconecta redes distintas usando direcciones IP</td>
+              <td style="color:var(--accent3);">Estándar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLOS -->
+  <section id="protocolos">
+    <div class="fade-in">
+      <div class="section-label">05 — Comunicación</div>
+      <h2 class="section-title">Protocolos de <span>Comunicación</span></h2>
+      <div class="divider"></div>
+      <div class="highlight" style="margin-bottom:2rem;">
+        <h3>¿Qué es un protocolo?</h3>
+        <p>Conjunto de reglas, normas y procedimientos estandarizados que permiten a dos o más dispositivos conectarse,
+          intercambiar información y entenderse en una red. Definen el formato de mensajes y gestionan la detección de
+          errores.</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="flag-name">TCP/IP</div>
+          <p style="font-size:.8rem;color:var(--text-muted);">Protocolo fundamental de Internet para transmisión de
+            paquetes.</p>
+        </div>
+        <div class="card">
+          <div class="flag-name">HTTP/S</div>
+          <p style="font-size:.8rem;color:var(--text-muted);">Transferencia de información en sitios web (S = cifrado).
+          </p>
+        </div>
+        <div class="card">
+          <div class="flag-name">FTP</div>
+          <p style="font-size:.8rem;color:var(--text-muted);">Orientado a la transferencia de archivos entre sistemas.
+          </p>
+        </div>
+        <div class="card">
+          <div class="flag-name">SMTP</div>
+          <p style="font-size:.8rem;color:var(--text-muted);">Utilizado para el envío de correos electrónicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TCP/IP vs NetBIOS -->
+  <section id="tcpip">
+    <div class="fade-in">
+      <div class="section-label">06 — Comparativa</div>
+      <h2 class="section-title"><span>TCP/IP</span> vs NetBIOS</h2>
+      <div class="divider"></div>
+      <div class="grid-2" style="margin-bottom:2rem;">
+        <div class="card" style="border-color:rgba(0,229,255,.3);">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">
+            TCP/IP</div>
+          <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Conjunto completo de protocolos para
+            comunicación global incluyendo Internet. Usa direcciones IP. Permite comunicación entre redes diferentes. Es
+            el estándar universal actual organizado en capas: acceso a red, internet, transporte y aplicación.</p>
+        </div>
+        <div class="card" style="border-color:rgba(123,97,255,.3);">
+          <div
+            style="color:var(--accent2);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">
+            NetBIOS</div>
+          <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Interfaz orientada a redes locales. Usa
+            nombres de red para identificar dispositivos. No es un protocolo completo por sí mismo, depende de otros
+            (ej: NetBT sobre TCP/IP). Fue ampliamente usado en redes Windows antiguas. Actualmente en desuso.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>TCP/IP</th>
+              <th>NetBIOS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Identificación</td>
+              <td>Direcciones IP</td>
+              <td>Nombres de red</td>
+            </tr>
+            <tr>
+              <td>Alcance</td>
+              <td>Global (Internet)</td>
+              <td>Redes locales (LAN)</td>
+            </tr>
+            <tr>
+              <td>Autonomía</td>
+              <td>Protocolo completo</td>
+              <td>Depende de otros protocolos</td>
+            </tr>
+            <tr>
+              <td>Estado</td>
+              <td style="color:var(--accent3);">Estándar actual</td>
+              <td style="color:#ff6b6b;">En desuso</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETE TCP/IP -->
+  <section id="paquete">
+    <div class="fade-in">
+      <div class="section-label">07 — Estructura de Datos</div>
+      <h2 class="section-title">Paquete <span>TCP/IP</span> & Flags</h2>
+      <div class="divider"></div>
+
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.75;margin-bottom:2rem;">Cada paquete TCP/IP está
+        formado por capas de encabezados envueltos unos dentro de otros (encapsulación). El encabezado IP actúa como
+        columna vertebral, mientras que el payload es el corazón donde reside la información valiosa.</p>
+
+      <div style="margin-bottom:2.5rem;">
+        <div class="packet-layer" style="background:rgba(0,229,255,.07); border:1px solid rgba(0,229,255,.2);">
+          <div class="layer-name" style="color:var(--text-muted);">Ethernet</div>
+          <div class="layer-fields">
+            <span class="field">MAC Origen</span><span class="field">MAC Destino</span><span
+              class="field">EtherType</span><span class="field">FCS</span>
+          </div>
+        </div>
+        <div class="packet-layer"
+          style="background:rgba(123,97,255,.07); border:1px solid rgba(123,97,255,.2); margin-left:1.5rem;">
+          <div class="layer-name" style="color:#a78bfa;">IP Header</div>
+          <div class="layer-fields">
+            <span class="field">IP Origen</span><span class="field">IP Destino</span><span class="field">TTL</span><span
+              class="field">Protocolo</span><span class="field">Checksum</span>
+          </div>
+        </div>
+        <div class="packet-layer"
+          style="background:rgba(0,255,148,.07); border:1px solid rgba(0,255,148,.2); margin-left:3rem;">
+          <div class="layer-name" style="color:var(--accent3);">TCP Header</div>
+          <div class="layer-fields">
+            <span class="field">Puerto Orig</span><span class="field">Puerto Dest</span><span class="field">Nº
+              Sec</span><span class="field">ACK</span><span class="field">Flags</span><span
+              class="field">Checksum</span>
+          </div>
+        </div>
+        <div class="packet-layer"
+          style="background:rgba(255,200,0,.07); border:1px solid rgba(255,200,0,.2); margin-left:4.5rem;">
+          <div class="layer-name" style="color:#ffd43b;">Payload</div>
+          <div class="layer-fields">
+            <span class="field">Datos de Aplicación (HTTP, DNS, SSH…)</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1.2rem;font-size:1.1rem;">Flags TCP</h3>
+      <div class="grid-3">
+        <div class="flag-card">
+          <div class="flag-name">SYN</div>
+          <div class="flag-desc">Inicia una nueva conexión TCP (handshake)</div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-name">ACK</div>
+          <div class="flag-desc">Confirma que el campo de acuse de recibo es válido</div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-name">FIN</div>
+          <div class="flag-desc">Finaliza la conexión TCP de forma ordenada</div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-name">RST</div>
+          <div class="flag-desc">Reinicia la conexión TCP abruptamente</div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-name">PSH</div>
+          <div class="flag-desc">Envía datos al usuario tan pronto como se reciban</div>
+        </div>
+        <div class="flag-card">
+          <div class="flag-name">URG</div>
+          <div class="flag-desc">El segmento contiene datos urgentes a procesar de inmediato</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEOGRAFÍA -->
+  <section id="geografia">
+    <div class="fade-in">
+      <div class="section-label">08 — Clasificación Geográfica</div>
+      <h2 class="section-title">Redes según su <span>Geografía</span></h2>
+      <div class="divider"></div>
+
+      <!-- Concentric rings visual -->
+      <div
+        style="position:relative; width:360px; height:360px; margin: 2rem auto; background: #080c14; border-radius: 20px; padding: 20px; box-sizing: content-box;">
+
+        <div style="position:relative; width:100%; height:100%;">
+
+          <div
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:350px; height:350px; border-radius:50%; background:rgba(255,107,107,.02); border:2px dashed rgba(255,107,107,.3); z-index:1;">
+          </div>
+          <div
+            style="position:absolute; bottom:8%; right:12%; font-family:'Space Mono',monospace; font-size:10px; color:#ff6b6b; font-weight:700; z-index:10; text-align:right;">
+            GAN<br><span style="font-weight:400; opacity:0.8;">Global</span></div>
+
+          <div
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:280px; height:280px; border-radius:50%; background:rgba(123,97,255,.04); border:2px solid rgba(123,97,255,.4); z-index:2;">
+          </div>
+          <div
+            style="position:absolute; top:18%; right:22%; font-family:'Space Mono',monospace; font-size:10px; color:#a78bfa; font-weight:700; z-index:10;">
+            WAN<br><span style="font-weight:400; opacity:0.8;">+1000km</span></div>
+
+          <div
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:210px; height:210px; border-radius:50%; background:rgba(0,229,255,.05); border:2px solid rgba(0,229,255,.5); z-index:3;">
+          </div>
+          <div
+            style="position:absolute; top:35%; left:25%; font-family:'Space Mono',monospace; font-size:10px; color:#00e5ff; font-weight:700; z-index:10;">
+            MAN<br><span style="font-weight:400; opacity:0.8;">10-100km</span></div>
+
+          <div
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:140px; height:140px; border-radius:50%; background:rgba(0,255,148,.06); border:2px solid #00ff94; z-index:4;">
+          </div>
+          <div
+            style="position:absolute; bottom:35%; left:38%; font-family:'Space Mono',monospace; font-size:9px; color:#00ff94; font-weight:700; z-index:10;">
+            LAN<br><span style="font-weight:400; opacity:0.8;">100m-1km</span></div>
+
+          <div
+            style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:70px; height:70px; border-radius:50%; background:rgba(255,212,59,.15); border:2px solid #ffd43b; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:5; box-shadow: 0 0 15px rgba(255,212,59,0.2);">
+            <span
+              style="font-family:'Space Mono',monospace; font-size:11px; color:#ffd43b; font-weight:700; text-align:center;">PAN</span>
+            <span style="font-family:'Space Mono',monospace; font-size:8px; color:#ffd43b; opacity:0.9;">1-10m</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div
+            style="color:#ffd43b;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            PAN — Personal</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">1–10 metros. Conecta periféricos personales. Usa
+            Bluetooth y USB.</p>
+        </div>
+        <div class="card">
+          <div
+            style="color:#00ff94;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            LAN — Local</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Edificio u oficina. Alta velocidad y baja latencia.
+            Ethernet / Wi-Fi.</p>
+        </div>
+        <div class="card">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            MAN — Metropolitana</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Cubre una ciudad. Conecta varias LANs. Usa fibra óptica.
+          </p>
+        </div>
+        <div class="card">
+          <div
+            style="color:#a78bfa;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            WAN — Amplia</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Países o continentes. Usa satélites y enlaces dedicados.
+          </p>
+        </div>
+        <div class="card">
+          <div
+            style="color:#ff6b6b;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            GAN — Global</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Escala mundial. Crucial para multinacionales.
+            Telecomunicaciones avanzadas.</p>
+        </div>
+        <div class="card">
+          <div
+            style="color:#ffa94d;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;margin-bottom:.5rem;">
+            VPN — Virtual Privada</div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Túnel cifrado sobre red pública. Acceso remoto seguro a
+            recursos corporativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPOLOGÍA -->
+  <section id="topologia">
+    <div class="fade-in">
+      <div class="section-label">09 — Estructura Física</div>
+      <h2 class="section-title">Topologías de <span>Red</span></h2>
+      <div class="divider"></div>
+      <div class="topo-wrap">
+        <div class="topo-tabs">
+          <button class="topo-tab active" onclick="showTopo('bus',this)">Bus</button>
+          <button class="topo-tab" onclick="showTopo('star',this)">Estrella</button>
+          <button class="topo-tab" onclick="showTopo('ring',this)">Anillo</button>
+          <button class="topo-tab" onclick="showTopo('mesh',this)">Malla</button>
+          <button class="topo-tab" onclick="showTopo('tree',this)">Árbol</button>
+        </div>
+        <div class="topo-canvas-wrap">
+          <canvas class="topo" id="topo-canvas" width="800" height="280"></canvas>
+          <div id="topo-info" style="margin-top:1rem;font-size:.85rem;color:var(--text-muted);line-height:1.7;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DHCP -->
+  <section id="dhcp">
+    <div class="fade-in">
+      <div class="section-label">10 — Configuración Dinámica</div>
+      <h2 class="section-title">Servicio <span>DHCP</span></h2>
+      <div class="divider"></div>
+      <div class="highlight" style="margin-bottom:2rem;">
+        <h3>Dynamic Host Configuration Protocol</h3>
+        <p>Asigna automáticamente direcciones IP a cada dispositivo de red (host). Elimina la necesidad de asignaciones
+          manuales por parte de administradores. También asigna: máscaras de subred, puertas de enlace y servidores DNS.
+        </p>
+      </div>
+      <!-- DHCP flow SVG -->
+      <div
+        style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem;">
+        <svg viewBox="0 0 600 120" style="width:100%;max-width:600px;display:block;margin:0 auto;"
+          xmlns="http://www.w3.org/2000/svg">
+          <!-- Boxes -->
+          <rect x="10" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+          <text x="65" y="55" text-anchor="middle" fill="#00e5ff" font-size="9"
+            font-family="monospace">DISPOSITIVO</text>
+          <text x="65" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Cliente</text>
+
+          <rect x="160" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#7b61ff" stroke-width="1.5" />
+          <text x="215" y="55" text-anchor="middle" fill="#7b61ff" font-size="9" font-family="monospace">DISCOVER</text>
+          <text x="215" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8"
+            font-family="monospace">Broadcast</text>
+
+          <rect x="310" y="30" width="110" height="55" rx="8" fill="#0e1622" stroke="#00ff94" stroke-width="1.5" />
+          <text x="365" y="55" text-anchor="middle" fill="#00ff94" font-size="9" font-family="monospace">DHCP
+            SERVER</text>
+          <text x="365" y="70" text-anchor="middle" fill="#6b7fa3" font-size="8" font-family="monospace">Ofrece
+            IP</text>
+
+          <rect x="460" y="30" width="120" height="55" rx="8" fill="#0e1622" stroke="#ffd43b" stroke-width="1.5" />
+          <text x="520" y="48" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace">IP ·
+            Gateway</text>
+          <text x="520" y="62" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace">Subnet ·
+            DNS</text>
+          <text x="520" y="76" text-anchor="middle" fill="#6b7fa3" font-size="8"
+            font-family="monospace">Configuración</text>
+
+          <!-- Arrows -->
+          <line x1="120" y1="57" x2="160" y2="57" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arr)" />
+          <line x1="270" y1="57" x2="310" y2="57" stroke="#7b61ff" stroke-width="1.5" marker-end="url(#arr2)" />
+          <line x1="420" y1="57" x2="460" y2="57" stroke="#00ff94" stroke-width="1.5" marker-end="url(#arr3)" />
+          <defs>
+            <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#00e5ff" />
+            </marker>
+            <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#7b61ff" />
+            </marker>
+            <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#00ff94" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- DNS -->
+  <section id="dns">
+    <div class="fade-in">
+      <div class="section-label">11 — Resolución de Nombres</div>
+      <h2 class="section-title">Servicio <span>DNS</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">El DNS traduce nombres de
+        host a direcciones IP, funcionando como una agenda telefónica de Internet. Por ejemplo: <span
+          style="color:var(--accent);font-family:'Space Mono',monospace;">www.apple.com → 17.253.207.54</span></p>
+      <div class="grid-2">
+        <div class="card" style="border-color:rgba(0,229,255,.25);">
+          <div class="card-icon">🔄</div>
+          <h3>Servidor DNS Recursivo</h3>
+          <p>Recibe la consulta del cliente y se encarga de buscar la respuesta consultando a otros servidores DNS hasta
+            encontrarla.</p>
+        </div>
+        <div class="card" style="border-color:rgba(0,255,148,.25);">
+          <div class="card-icon">🏛️</div>
+          <h3>Servidor DNS Autoritativo</h3>
+          <p>Contiene la información definitiva sobre un dominio específico. Es la fuente final de verdad para la
+            resolución del nombre.</p>
+        </div>
+      </div>
+
+      <!-- DNS flow -->
+      <div
+        style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-top:1.5rem;">
+        <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:1rem;">// Flujo
+          de resolución DNS</div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <div style="display:flex;align-items:center;gap:1rem;"><span
+              style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">1.</span><span
+              style="font-size:.88rem;color:var(--text-muted);">Usuario escribe <code
+                style="color:var(--accent);">www.ejemplo.com</code> en el navegador</span></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span
+              style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">2.</span><span
+              style="font-size:.88rem;color:var(--text-muted);">El SO consulta al <strong
+                style="color:var(--text);">Servidor DNS Recursivo</strong></span></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span
+              style="color:var(--accent);font-family:'Space Mono',monospace;min-width:24px;">3.</span><span
+              style="font-size:.88rem;color:var(--text-muted);">El recursivo consulta al <strong
+                style="color:var(--text);">Servidor DNS Autoritativo</strong></span></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span
+              style="color:var(--accent3);font-family:'Space Mono',monospace;min-width:24px;">4.</span><span
+              style="font-size:.88rem;color:var(--text-muted);">Responde con la IP: <code
+                style="color:var(--accent3);">93.184.216.34</code></span></div>
+          <div style="display:flex;align-items:center;gap:1rem;"><span
+              style="color:var(--accent3);font-family:'Space Mono',monospace;min-width:24px;">5.</span><span
+              style="font-size:.88rem;color:var(--text-muted);">El navegador se conecta directamente a esa IP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIRELESS -->
+  <section id="wireless">
+    <div class="fade-in">
+      <div class="section-label">12 — Comunicaciones Inalámbricas</div>
+      <h2 class="section-title">Tecnologías <span>Wireless</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Se denomina wireless a las
+        tecnologías que transmiten información sin un medio físico guiado, mediante radiofrecuencia. Difieren en
+        alcance, potencia, ancho de banda, latencia y consumo energético.</p>
+      <div class="grid-2">
+        <div class="card" style="border-color:rgba(0,229,255,.25);">
+          <div class="card-icon">📶</div>
+          <h3>Wi-Fi / WLAN — IEEE 802.11</h3>
+          <p>La más difundida en hogares, oficinas y campus. Las generaciones se nombran comercialmente:<br><br>
+            <span class="chip">Wi-Fi 4 = 802.11n</span>
+            <span class="chip">Wi-Fi 5 = 802.11ac</span>
+            <span class="chip">Wi-Fi 6 = 802.11ax</span><br><br>
+            Wi-Fi 6 fue diseñado especialmente para entornos densos con múltiples usuarios.
+          </p>
+        </div>
+        <div class="card" style="border-color:rgba(123,97,255,.25);">
+          <div class="card-icon">🎧</div>
+          <h3>Bluetooth / WPAN</h3>
+          <p>Diseñado para corto alcance y consumo contenido. Ideal para periféricos, audio, wearables y enlaces entre
+            dispositivos personales. Administrado por Bluetooth SIG (históricamente vinculado a IEEE 802.15.1).</p>
+        </div>
+        <div class="card" style="border-color:rgba(0,255,148,.25);">
+          <div class="card-icon">🏠</div>
+          <h3>Zigbee / IoT — IEEE 802.15.4</h3>
+          <p>Muy usado en automatización, sensores y domótica. Privilegia bajo consumo y redes de baja tasa de datos.
+            Permite dispositivos con larga autonomía y topologías tipo malla.</p>
+        </div>
+        <div class="card" style="border-color:rgba(255,212,59,.25);">
+          <div class="card-icon">📡</div>
+          <h3>Redes Móviles: 4G / 5G</h3>
+          <p>Regidas por el ecosistema <strong style="color:var(--text);">3GPP</strong>. Define interfaz de radio,
+            arquitectura de red, movilidad y autenticación. 5G es un sistema completo de telecomunicaciones, no solo
+            "radio más rápida".</p>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:1.5rem;">
+        <h3>Ejemplo en una universidad</h3>
+        <p>Las notebooks usan <strong style="color:var(--text);">Wi-Fi 6</strong> dentro del campus · Los auriculares
+          del personal usan <strong style="color:var(--text);">Bluetooth</strong> · Los sensores de temperatura en aulas
+          usan <strong style="color:var(--text);">Zigbee</strong> · Los usuarios fuera del edificio usan <strong
+            style="color:var(--text);">4G/5G</strong> del operador.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROXY -->
+  <section id="proxy">
+    <div class="fade-in">
+      <div class="section-label">13 — Intermediación de Red</div>
+      <h2 class="section-title">¿Qué es un <span>Proxy</span>?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Un proxy es un
+        intermediario que recibe solicitudes de un nodo y las reenvía hacia otro. Su valor técnico está en que <strong
+          style="color:var(--text);">termina o intermedia</strong> la comunicación, permitiendo aplicar políticas,
+        autenticación, caché, anonimización y filtrado.</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">→</div>
+          <h3>Forward Proxy</h3>
+          <p>Se ubica del lado del cliente. Los usuarios de una red interna no salen directamente a Internet sino a
+            través del proxy. Permite control, registro, filtrado de navegación y caché de contenido.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">←</div>
+          <h3>Reverse Proxy</h3>
+          <p>Se ubica delante de uno o varios servidores. Los clientes externos creen acceder a un único servicio, pero
+            el proxy reenvía internamente al backend. Permite ocultar servidores, repartir carga y centralizar TLS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STP -->
+  <section id="stp">
+    <div class="fade-in">
+      <div class="section-label">14 — Prevención de Bucles</div>
+      <h2 class="section-title">Protocolo <span>Spanning Tree</span></h2>
+      <div class="divider"></div>
+      <div class="grid-2" style="align-items:start;">
+        <div>
+          <div class="highlight">
+            <h3>IEEE 802.1D — Capa 2 OSI</h3>
+            <p>STP evita bucles lógicos en redes Ethernet con enlaces redundantes. Sin él, una trama broadcast puede
+              circular indefinidamente generando tormentas de broadcast y degradación severa.</p>
+          </div>
+          <div class="highlight">
+            <h3>Funcionamiento</h3>
+            <p>Los switches usan <strong style="color:var(--text);">BPDUs</strong> para elegir un <strong
+                style="color:var(--text);">root bridge</strong>, calcular el mejor camino hacia él y dejar algunos
+              puertos en estado de bloqueo. La topología física mantiene redundancia, pero la lógica queda libre de
+              bucles.</p>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <span class="chip">STP — 802.1D</span>
+            <span class="chip">RSTP — más rápido</span>
+            <span class="chip">MSTP — escalable</span>
+          </div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 260 200" style="width:100%;max-width:260px;margin:0 auto;display:block;"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Root Bridge -->
+            <rect x="90" y="10" width="80" height="36" rx="7" fill="#0e1622" stroke="#ffd43b" stroke-width="2" />
+            <text x="130" y="28" text-anchor="middle" fill="#ffd43b" font-size="8" font-family="monospace"
+              font-weight="bold">ROOT BRIDGE</text>
+            <text x="130" y="40" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">SW-A</text>
+            <!-- SW-B -->
+            <rect x="20" y="110" width="70" height="30" rx="7" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+            <text x="55" y="130" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SW-B</text>
+            <!-- SW-C -->
+            <rect x="170" y="110" width="70" height="30" rx="7" fill="#0e1622" stroke="#00e5ff" stroke-width="1.5" />
+            <text x="205" y="130" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">SW-C</text>
+            <!-- Active links -->
+            <line x1="110" y1="46" x2="65" y2="110" stroke="#00ff94" stroke-width="2" />
+            <line x1="150" y1="46" x2="195" y2="110" stroke="#00ff94" stroke-width="2" />
+            <!-- Blocked link -->
+            <line x1="90" y1="125" x2="170" y2="125" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,3" />
+            <text x="130" y="118" text-anchor="middle" fill="#ff6b6b" font-size="7"
+              font-family="monospace">BLOCKED</text>
+            <!-- Labels -->
+            <text x="66" y="170" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">Active
+              links</text>
+            <circle cx="130" cy="46" r="5" fill="#ffd43b" />
+          </svg>
+          <p style="font-size:.75rem;color:var(--text-muted);margin-top:.5rem;">STP bloquea el enlace redundante para
+            evitar el loop</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OSPF -->
+  <section id="ospf">
+    <div class="fade-in">
+      <div class="section-label">15 — Protocolo de Enrutamiento</div>
+      <h2 class="section-title">Protocolo <span>OSPF</span></h2>
+      <div class="divider"></div>
+      <div class="highlight">
+        <h3>Open Shortest Path First — RFC 2328 — Capa 3</h3>
+        <p>Protocolo de enrutamiento interior (IGP) de tipo <strong style="color:var(--text);">link-state</strong>. Se
+          usa dentro de un mismo sistema autónomo para que los routers compartan información de topología y calculen
+          rutas mediante el algoritmo <strong style="color:var(--text);">SPF (Dijkstra)</strong>.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="flag-name">Link-State</div>
+          <div class="flag-desc">Cada router anuncia el estado de sus enlaces y todos construyen una base de datos
+            topológica completa.</div>
+        </div>
+        <div class="card">
+          <div class="flag-name">Algoritmo SPF</div>
+          <div class="flag-desc">Calcula el mejor camino según un costo. Permite decisiones más finas que simplemente
+            contar saltos.</div>
+        </div>
+        <div class="card">
+          <div class="flag-name">Áreas OSPF</div>
+          <div class="flag-desc">Admite segmentación en áreas mejorando escalabilidad en redes medianas o grandes.</div>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:1.5rem;">
+        <h3>vs STP</h3>
+        <p>STP opera entre <strong style="color:var(--text);">switches</strong> en capa 2 para prevenir loops. OSPF
+          opera entre <strong style="color:var(--text);">routers</strong> en capa 3 para calcular rutas óptimas. Son
+          protocolos complementarios, no equivalentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARP -->
+  <section id="arp">
+    <div class="fade-in">
+      <div class="section-label">16 — Resolución de Direcciones</div>
+      <h2 class="section-title">Protocolo <span>ARP</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">ARP (Address Resolution
+        Protocol — RFC 826) permite asociar una dirección lógica IPv4 con una dirección física MAC en Ethernet. Opera
+        dentro del dominio de enlace local, no sirve para encontrar hosts en Internet.</p>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">❓</div>
+          <h3>ARP Request (broadcast)</h3>
+          <p>Cuando un host necesita la MAC de una IP destino y no la tiene en caché, envía un broadcast preguntando:
+            "¿Quién tiene esta IP?"</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3>ARP Reply (unicast)</h3>
+          <p>El equipo dueño de esa IP responde con su MAC. La relación IP↔MAC se guarda en caché temporalmente para
+            reutilizarla.</p>
+        </div>
+      </div>
+      <div class="highlight" style="margin-top:1.5rem;">
+        <h3>Relación con DNS y Gateway</h3>
+        <p>DNS responde "qué IP tiene ese nombre". ARP responde "qué MAC tiene el siguiente salto". Si la IP destino no
+          está en la subred local, ARP resuelve la MAC del <strong style="color:var(--text);">gateway
+            predeterminado</strong>, no del servidor remoto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIREWALL -->
+  <section id="firewall">
+    <div class="fade-in">
+      <div class="section-label">17 — Seguridad de Red</div>
+      <h2 class="section-title">¿Qué es un <span>Firewall</span>?</h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">Un firewall filtra,
+        inspecciona y controla el tráfico entrante y saliente según reglas definidas. Actúa como barrera de control
+        entre zonas con distinto nivel de confianza. Puede ser hardware, software en un host, o un servicio
+        administrado.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="flag-name">IP Origen/Destino</div>
+          <div class="flag-desc">Permite o bloquea según la dirección IP de origen y destino del paquete.</div>
+        </div>
+        <div class="card">
+          <div class="flag-name">Puerto / Protocolo</div>
+          <div class="flag-desc">Filtra por puerto origen/destino y protocolo (TCP, UDP, ICMP…).</div>
+        </div>
+        <div class="card">
+          <div class="flag-name">Estado de Conexión</div>
+          <div class="flag-desc">Los firewalls stateful inspeccionan el estado de la conexión, no solo el paquete
+            individual.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DMZ -->
+  <section id="dmz">
+    <div class="fade-in">
+      <div class="section-label">18 — Zona Perimetral</div>
+      <h2 class="section-title">¿Qué es una <span>DMZ</span>?</h2>
+      <div class="divider"></div>
+      <div class="grid-2" style="align-items:start;">
+        <div>
+          <div class="highlight">
+            <h3>Demilitarized Zone</h3>
+            <p>Red intermedia donde se colocan sistemas que deben recibir conexiones desde redes menos confiables
+              (Internet) sin exponer directamente la red interna. También llamada <strong
+                style="color:var(--text);">screened subnet</strong>.</p>
+          </div>
+          <div class="highlight">
+            <h3>Reglas de Firewall en DMZ</h3>
+            <p>Deben existir reglas muy específicas entre: Internet ↔ DMZ · DMZ ↔ Red interna · Red interna ↔ DMZ. Si un
+              sistema en la DMZ es comprometido, el atacante no debería tener paso libre hacia la LAN interna.</p>
+          </div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <svg viewBox="0 0 220 240" style="width:100%;max-width:220px;margin:0 auto;display:block;"
+            xmlns="http://www.w3.org/2000/svg">
+            <text x="110" y="18" text-anchor="middle" fill="#6b7fa3" font-size="8"
+              font-family="monospace">INTERNET</text>
+            <rect x="60" y="25" width="100" height="25" rx="5" fill="#0e1622" stroke="#ff6b6b" stroke-width="1.5" />
+            <text x="110" y="42" text-anchor="middle" fill="#ff6b6b" font-size="8"
+              font-family="monospace">FIREWALL</text>
+            <line x1="110" y1="50" x2="110" y2="65" stroke="#6b7fa3" stroke-width="1.5" />
+            <rect x="40" y="65" width="140" height="50" rx="8" fill="rgba(255,107,107,.06)"
+              stroke="rgba(255,107,107,.35)" stroke-width="1.5" stroke-dasharray="5,3" />
+            <text x="110" y="84" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="monospace"
+              font-weight="bold">DMZ</text>
+            <rect x="70" y="90" width="80" height="20" rx="5" fill="#0e1622" stroke="#ffa94d" stroke-width="1.5" />
+            <text x="110" y="104" text-anchor="middle" fill="#ffa94d" font-size="7" font-family="monospace">Reverse
+              Proxy</text>
+            <line x1="110" y1="115" x2="110" y2="130" stroke="#6b7fa3" stroke-width="1.5" />
+            <rect x="60" y="130" width="100" height="25" rx="5" fill="#0e1622" stroke="#ff6b6b" stroke-width="1.5" />
+            <text x="110" y="147" text-anchor="middle" fill="#ff6b6b" font-size="8"
+              font-family="monospace">FIREWALL</text>
+            <line x1="110" y1="155" x2="110" y2="170" stroke="#6b7fa3" stroke-width="1.5" />
+            <rect x="30" y="170" width="160" height="50" rx="8" fill="rgba(0,229,255,.06)" stroke="rgba(0,229,255,.35)"
+              stroke-width="1.5" />
+            <text x="110" y="192" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace"
+              font-weight="bold">RED INTERNA (LAN)</text>
+            <text x="110" y="208" text-anchor="middle" fill="#6b7fa3" font-size="7" font-family="monospace">Servidores ·
+              Usuarios</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GATEWAY -->
+  <section id="gateway">
+    <div class="fade-in">
+      <div class="section-label">19 — Punto de Salida</div>
+      <h2 class="section-title">¿Qué es un <span>Gateway</span>?</h2>
+      <div class="divider"></div>
+      <div class="highlight">
+        <h3>Default Gateway</h3>
+        <p>En el contexto IP, el gateway es el punto de salida hacia otra red. Normalmente es un router o interfaz de
+          router al que los hosts envían tráfico destinado a redes remotas. Un host compara la IP destino con su subred:
+          si el destino no pertenece a la misma red, envía el paquete al gateway predeterminado.</p>
+      </div>
+      <div class="card" style="margin-top:1.5rem;">
+        <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:.8rem;">//
+          Ejemplo</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;">Una PC con IP <code
+            style="color:var(--accent);">192.168.1.50/24</code> quiere llegar a <code
+            style="color:var(--accent);">8.8.8.8</code>. Como esa IP no pertenece a <code
+            style="color:var(--accent);">192.168.1.0/24</code>, no intenta buscarlo directamente. En cambio, resuelve
+          por <strong style="color:var(--text);">ARP</strong> la MAC del gateway <code
+            style="color:var(--accent3);">192.168.1.1</code> y le entrega el paquete para que lo enrute mediante <strong
+            style="color:var(--text);">OSPF</strong> u otras rutas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOS DE ENLACE -->
+  <section id="enlaces">
+    <div class="fade-in">
+      <div class="section-label">21 — Conectividad WAN</div>
+      <h2 class="section-title">Tipos de <span>Enlace</span></h2>
+      <div class="divider"></div>
+      <div class="grid-2" style="margin-bottom:1.5rem;">
+        <div class="card">
+          <div class="card-icon">🏷️</div>
+          <h3>MPLS</h3>
+          <p>Tecnología de transporte usada por operadores para enrutar tráfico mediante labels. Ofrece control de
+            calidad de servicio, rutas predecibles y acuerdos de servicio estrictos. Ideal para empresas con muchas
+            sedes y tráfico crítico.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>LAN to LAN (Site-to-Site VPN)</h3>
+          <p>Enlace lógico entre dos redes LAN mediante túneles VPN cifrados sobre Internet. Los hosts de una LAN se
+            comunican con la otra sin exponer tráfico en claro. Bajo costo, sin contratar red privada del carrier.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📡</div>
+          <h3>Microonda</h3>
+          <p>Enlace inalámbrico punto a punto mediante radiofrecuencia terrestre. Requiere línea de vista entre antenas.
+            Baja latencia y buena capacidad. Ideal para unir dos edificios o campus donde tender fibra es costoso.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛰️</div>
+          <h3>VSAT</h3>
+          <p>Enlace satelital mediante terminales de pequeña apertura. Su gran ventaja es la cobertura geográfica
+            extrema: llega donde los medios terrestres no llegan. Usado en sitios rurales, minas, pozos y operaciones
+            temporales.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <h3>Fibra Dedicada / EPL</h3>
+          <p>Enlace privado punto a punto con ancho de banda reservado, baja latencia y alta previsibilidad. El
+            proveedor entrega una conexión de capa 2 con SLA estrictos. Ideal para interconexión sede ↔ data center.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>LTE/4G Fijo</h3>
+          <p>Enlace WAN sobre red celular LTE. Muy rápido de desplegar si hay cobertura. Útil para sucursales pequeñas,
+            enlaces de respaldo o sitios temporales sin infraestructura fija.</p>
+        </div>
+      </div>
+
+      <!-- Ranking table -->
+      <h3 style="margin-bottom:1rem;font-size:1rem;color:var(--accent);">// Ranking comparativo (1 = mejor)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Enlace</th>
+              <th>Económico</th>
+              <th>Performance</th>
+              <th>Capacidad</th>
+              <th>Políticas</th>
+              <th>Distancia</th>
+              <th>Configuración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">LAN to LAN (VPN)</td>
+              <td style="color:#00ff94;">1</td>
+              <td>5</td>
+              <td>5</td>
+              <td>4</td>
+              <td>4</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">LTE/4G fijo</td>
+              <td style="color:#00e5ff;">2</td>
+              <td>4</td>
+              <td>4</td>
+              <td>5</td>
+              <td>3</td>
+              <td style="color:#00ff94;">1</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">Microonda</td>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>6</td>
+              <td>5</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">VSAT</td>
+              <td style="color:#ff6b6b;">6</td>
+              <td style="color:#ff6b6b;">6</td>
+              <td style="color:#ff6b6b;">6</td>
+              <td>3</td>
+              <td style="color:#00ff94;">1</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">MPLS</td>
+              <td>5</td>
+              <td style="color:#00e5ff;">2</td>
+              <td style="color:#00e5ff;">2</td>
+              <td style="color:#00e5ff;">2</td>
+              <td style="color:#00e5ff;">2</td>
+              <td style="color:#ff6b6b;">6</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600;">Fibra / EPL</td>
+              <td>4</td>
+              <td style="color:#00ff94;">1</td>
+              <td style="color:#00ff94;">1</td>
+              <td style="color:#00ff94;">1</td>
+              <td style="color:#ff6b6b;">6</td>
+              <td style="color:#00e5ff;">2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:1.5rem;">
+        <h3 style="font-size:1rem;color:var(--accent);margin-bottom:1rem;">// Elección por escenario</h3>
+        <div class="grid-3">
+          <div class="card" style="border-color:rgba(123,97,255,.3);">
+            <div style="color:#a78bfa;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO
+              1</div>
+            <h3>Call Centers → Data Center</h3>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">MPLS</span> —
+              Estabilidad, calidad de voz, priorización de tráfico y acuerdos de servicio definidos.</p>
+          </div>
+          <div class="card" style="border-color:rgba(255,107,107,.3);">
+            <div style="color:#ff6b6b;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO
+              2</div>
+            <h3>Pozos Petroleros (15 min/día)</h3>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">VSAT</span> —
+              Sitios remotos aislados, sin infraestructura terrestre. Cobertura geográfica extrema.</p>
+          </div>
+          <div class="card" style="border-color:rgba(0,255,148,.3);">
+            <div style="color:#00ff94;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO
+              3</div>
+            <h3>Dos Edificios Enfrentados</h3>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">Microonda</span> —
+              Línea de vista directa, excelente rendimiento sin obra civil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LTE -->
+  <section id="lte">
+    <div class="fade-in">
+      <div class="section-label">22 — Acceso Móvil</div>
+      <h2 class="section-title">Tecnología <span>LTE</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">LTE (Long Term Evolution)
+        es una tecnología de acceso móvil del ecosistema <strong style="color:var(--text);">3GPP</strong>, evolución de
+        UMTS/HSPA. Orientada a mayor capacidad, menor latencia, mejor eficiencia espectral y arquitectura basada en IP.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>UE</h3>
+          <p>User Equipment — el dispositivo del usuario que se conecta a la red LTE.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📶</div>
+          <h3>E-UTRAN</h3>
+          <p>Red de acceso radio formada por estaciones base llamadas <strong
+              style="color:var(--text);">eNodeB</strong>.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">☁️</div>
+          <h3>EPC</h3>
+          <p>Evolved Packet Core — núcleo de red orientado a paquetes IP.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;">
+        <span class="chip">OFDMA (downlink)</span>
+        <span class="chip">SC-FDMA (uplink)</span>
+        <span class="chip">MIMO</span>
+        <span class="chip">Menor latencia que 3G</span>
+        <span class="chip">Eficiencia espectral mejorada</span>
+        <span class="chip">Arquitectura IP simplificada</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAMS & QoS -->
+  <section id="teams">
+    <div class="fade-in">
+      <div class="section-label">23 & 24 — Colaboración y Calidad</div>
+      <h2 class="section-title">Microsoft Teams & <span>QoS en MPLS</span></h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <h3>Microsoft Teams</h3>
+          <p>Plataforma de comunicación y colaboración basada en la nube. Usa <strong
+              style="color:var(--text);">TCP/IP</strong> para transmisión de datos y streaming para videollamadas.
+            Optimiza el ancho de banda mediante compresión de audio/video y puede integrarse con políticas de <strong
+              style="color:var(--text);">QoS</strong> para priorizar tráfico en redes corporativas con MPLS.
+            Alternativas: Zoom, Slack.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>QoS en MPLS</h3>
+          <p>Aplicar calidad de servicio en MPLS significa priorizar tráfico crítico (voz, video) sobre otros datos. Se
+            logra mediante clasificación y marcado del tráfico con valores <strong
+              style="color:var(--text);">DSCP</strong>. MPLS facilita este proceso con su enrutamiento eficiente por
+            etiquetas, mientras que QoS gestiona la prioridad para evitar congestiones y garantizar el rendimiento de
+            aplicaciones sensibles al retardo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CABLES -->
+  <section id="cables">
+    <div class="fade-in">
+      <div class="section-label">25 — Medios Físicos</div>
+      <h2 class="section-title">Coaxial, UTP y <span>Fibra Óptica</span></h2>
+      <div class="divider"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>Coaxial</th>
+              <th>UTP</th>
+              <th>Fibra Óptica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Material</td>
+              <td>Cobre</td>
+              <td>Cobre</td>
+              <td style="color:var(--accent3);">Hilos de vidrio</td>
+            </tr>
+            <tr>
+              <td>Simetría</td>
+              <td>Asimétrico</td>
+              <td>Simétrico (&lt;100m)</td>
+              <td style="color:var(--accent3);">Simétrico</td>
+            </tr>
+            <tr>
+              <td>Velocidad</td>
+              <td>Alta (fuera de hora pico)</td>
+              <td>Alta (&lt;100 metros)</td>
+              <td style="color:var(--accent3);">Alta en todo momento</td>
+            </tr>
+            <tr>
+              <td>Interferencias</td>
+              <td style="color:#ffa94d;">Susceptible</td>
+              <td style="color:#ffa94d;">Susceptible</td>
+              <td style="color:var(--accent3);">Inmune EM</td>
+            </tr>
+            <tr>
+              <td>Distancia</td>
+              <td>Media</td>
+              <td style="color:#ff6b6b;">Muy corta</td>
+              <td style="color:var(--accent3);">Larga</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CISCO -->
+  <section id="cisco">
+    <div class="fade-in">
+      <div class="section-label">26 — Certificaciones</div>
+      <h2 class="section-title">Certificaciones <span>Cisco</span></h2>
+      <div class="divider"></div>
+      <div class="grid-3" style="margin-bottom:1.5rem;">
+        <div class="card" style="border-color:rgba(0,229,255,.25);">
+          <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:.5rem;">CCENT
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Nivel inicial. Valida conocimientos básicos:
+            conectividad, direccionamiento IP y configuración simple de dispositivos.</p>
+        </div>
+        <div class="card" style="border-color:rgba(0,255,148,.25);">
+          <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent3);margin-bottom:.5rem;">CCNA
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Nivel intermedio. Instalar, configurar y administrar
+            redes pequeñas y medianas: routing, switching, seguridad básica y troubleshooting.</p>
+        </div>
+        <div class="card" style="border-color:rgba(123,97,255,.25);">
+          <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent2);margin-bottom:.5rem;">CCNP
+          </div>
+          <p style="font-size:.85rem;color:var(--text-muted);">Nivel avanzado. Diseñar, implementar y gestionar redes
+            complejas con mayor profundidad en protocolos y soluciones empresariales.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="highlight">
+          <h3>Track: Routing & Switching</h3>
+          <p>Diseño, configuración y administración de redes cableadas. Incluye routers, switches, protocolos de
+            enrutamiento (OSPF, EIGRP) y segmentación de redes.</p>
+        </div>
+        <div class="highlight">
+          <h3>Track: Security</h3>
+          <p>Protección de redes: firewalls, VPNs, control de accesos y detección de amenazas. Garantiza integridad y
+            confidencialidad de la información.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OSI -->
+  <section id="osi">
+    <div class="fade-in">
+      <div class="section-label">27 — Modelo de Referencia</div>
+      <h2 class="section-title">Modelo <span>OSI</span></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">El modelo OSI (Open
+        Systems Interconnection) divide las funciones de comunicación en 7 capas, proporcionando un lenguaje universal
+        para redes informáticas. Las capas superiores se benefician de la abstracción de las inferiores.</p>
+      <div style="display:flex;flex-direction:column;gap:.4rem;max-width:600px;">
+        <div class="packet-layer" style="background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.25);">
+          <div class="layer-name" style="color:#ff6b6b;">7. Aplicación</div>
+          <div class="layer-fields"><span class="field">HTTP · FTP · SMTP · DNS</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(255,169,77,.07);border:1px solid rgba(255,169,77,.25);">
+          <div class="layer-name" style="color:#ffa94d;">6. Presentación</div>
+          <div class="layer-fields"><span class="field">Cifrado · Compresión · Formato</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(255,212,59,.07);border:1px solid rgba(255,212,59,.25);">
+          <div class="layer-name" style="color:#ffd43b;">5. Sesión</div>
+          <div class="layer-fields"><span class="field">NetBIOS · RPC · Gestión de sesiones</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(0,255,148,.07);border:1px solid rgba(0,255,148,.25);">
+          <div class="layer-name" style="color:#00ff94;">4. Transporte</div>
+          <div class="layer-fields"><span class="field">TCP · UDP · Puertos · Segmentación</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.25);">
+          <div class="layer-name" style="color:#00e5ff;">3. Red</div>
+          <div class="layer-fields"><span class="field">IP · OSPF · ARP · Routing</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(123,97,255,.07);border:1px solid rgba(123,97,255,.25);">
+          <div class="layer-name" style="color:#a78bfa;">2. Enlace de Datos</div>
+          <div class="layer-fields"><span class="field">Ethernet · Switch · MAC · VLAN · STP</span></div>
+        </div>
+        <div class="packet-layer" style="background:rgba(200,150,255,.07);border:1px solid rgba(200,150,255,.2);">
+          <div class="layer-name" style="color:#d4b8ff;">1. Física</div>
+          <div class="layer-fields"><span class="field">Hub · Repetidor · Cables · Señales</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IEEE -->
+  <section id="ieee">
+    <div class="fade-in">
+      <div class="section-label">28 & 29 — Estándares IEEE</div>
+      <h2 class="section-title">Estándares <span>IEEE 802</span></h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">
+            IEEE 802.3 — Ethernet</div>
+          <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem;">Define el
+            funcionamiento de redes Ethernet cableadas. Se implementa con cables UTP o fibra óptica y utiliza un modelo
+            de comunicación basado en tramas.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Bajo costo</span>
+            <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Alta velocidad</span>
+            <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Amplia adopción</span>
+            <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Requiere cableado</span>
+            <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Interferencias (cobre)</span>
+          </div>
+        </div>
+        <div class="card">
+          <div
+            style="color:var(--accent2);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">
+            IEEE 802.4 — Token Bus</div>
+          <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem;">Define redes tipo
+            Token Bus. Implementa una red lógica en anillo con paso de testigo sobre cable coaxial. Solo el dispositivo
+            que posee el token puede transmitir, evitando colisiones.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+            <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Sin colisiones</span>
+            <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Mayor latencia</span>
+            <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Complejo</span>
+            <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ En desuso</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORREO -->
+  <section id="correo">
+    <div class="fade-in">
+      <div class="section-label">30 & 31 — Mensajería Electrónica</div>
+      <h2 class="section-title">Protocolos de <span>Correo</span></h2>
+      <div class="divider"></div>
+      <div class="grid-3">
+        <div class="card" style="border-color:rgba(255,107,107,.25);">
+          <div class="card-icon">📤</div>
+          <h3>SMTP</h3>
+          <p>Simple Mail Transfer Protocol. Se usa para el <strong style="color:var(--text);">envío</strong> de correos
+            electrónicos entre servidores de correo. Puerto 25 / 587.</p>
+        </div>
+        <div class="card" style="border-color:rgba(0,229,255,.25);">
+          <div class="card-icon">📥</div>
+          <h3>POP3</h3>
+          <p>Post Office Protocol v3. Para <strong style="color:var(--text);">recepción</strong> de correos. Descarga
+            los mensajes al cliente y los elimina del servidor. Puerto 110.</p>
+        </div>
+        <div class="card" style="border-color:rgba(0,255,148,.25);">
+          <div class="card-icon">🔄</div>
+          <h3>IMAP</h3>
+          <p>Internet Message Access Protocol. Recepción con <strong style="color:var(--text);">sincronización</strong>:
+            los mensajes permanecen en el servidor accesibles desde múltiples dispositivos. Puerto 143.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IPv4 vs IPv6 -->
+  <section id="ipv">
+    <div class="fade-in">
+      <div class="section-label">32 — Direccionamiento IP</div>
+      <h2 class="section-title"><span>IPv4</span> vs IPv6</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div class="card" style="border-color:rgba(0,229,255,.3);">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">
+            IPv4</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;">
+            <div style="font-size:.88rem;color:var(--text-muted);">📏 <strong style="color:var(--text);">32
+                bits</strong> de longitud</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">🔢 Formato decimal separado por puntos</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">📦 ~4.300 millones de direcciones</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">🔄 Requiere <strong
+                style="color:var(--text);">NAT</strong> para escalar</div>
+            <div style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:.5rem;">
+              192.168.1.1</div>
+          </div>
         </div>
         <div class="card" style="border-color:rgba(0,255,148,.3);">
-          <div style="color:#00ff94;font-family:'Space Mono',monospace;font-size:.7rem;margin-bottom:.5rem;">ESCENARIO 3</div>
-          <h3>Dos Edificios Enfrentados</h3>
-          <p style="font-size:.85rem;color:var(--text-muted);margin-top:.5rem;"><span class="chip">Microonda</span> — Línea de vista directa, excelente rendimiento sin obra civil.</p>
+          <div
+            style="color:var(--accent3);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">
+            IPv6</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;">
+            <div style="font-size:.88rem;color:var(--text-muted);">📏 <strong style="color:var(--text);">128
+                bits</strong> de longitud</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">🔡 Formato hexadecimal separado por ":"</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">📦 340 undecillones de direcciones</div>
+            <div style="font-size:.88rem;color:var(--text-muted);">✅ Elimina la necesidad de <strong
+                style="color:var(--text);">NAT</strong></div>
+            <div style="font-size:.88rem;color:var(--text-muted);">🔒 Mayor seguridad y escalabilidad</div>
+            <div style="font-family:'Space Mono',monospace;font-size:.72rem;color:var(--accent3);margin-top:.5rem;">
+              2001:0db8:85a3::8a2e:0370:7334</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section id="experiencia-personal">
+    <div class="fade-in">
+      <div class="section-label">33 — Experiencia en redes (individual por integrante)</div>
+      <h2 class="section-title">Experiencia Personal</h2>
+      <div class="divider"></div>
+      <div class="grid-2">
+        <div class="card" style="border-color:rgba(0,229,255,.3); text-align: center;">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">
+            Leonel Rodriguez</div>
+          <div class="card-div-opinion" style="display:flex;flex-direction:column;gap:.4rem;">
+            <div class="cont-img-opinion">
+              <img src="https://avatars.githubusercontent.com/u/78382395?v=4">
+            </div>
+            <p style="text-align: left;">Solo tengo experiencia en el sistema de administración de router, aperturas de
+              puertos, generar un backdoor hacia una dirección ip especifica mediante la ip del router, bloqueos de
+              dispositivos por mac, captura de trafico para obtener un hash y vulnerar cifrados WPA2.
+              También conectar un grupo de equipos por conexión de VPN.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(0,229,255,.3); text-align: center;">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">
+            Diego Amezaga</div>
+          <div class="card-div-opinion" style="display:flex;flex-direction:column;gap:.5rem;">
+            <div class="cont-img-opinion">
+              <img src="https://avatars.githubusercontent.com/u/100325204?v=4">
+            </div>
+            <p style="text-align: left;">Tengo poca o nula experiencia en redes a nivel laboral. Me interesa aprender
+              mas sobre el asunto. No he hecho mas que instalaciones caseras y un poco de prueba y testeos con redes
+              hogareñas y envio/recepción de paquetes de manera local.
+            </p>
+          </div>
+        </div>
 
-<!-- LTE -->
-<section id="lte">
-  <div class="fade-in">
-    <div class="section-label">22 — Acceso Móvil</div>
-    <h2 class="section-title">Tecnología <span>LTE</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">LTE (Long Term Evolution) es una tecnología de acceso móvil del ecosistema <strong style="color:var(--text);">3GPP</strong>, evolución de UMTS/HSPA. Orientada a mayor capacidad, menor latencia, mejor eficiencia espectral y arquitectura basada en IP.</p>
-    <div class="grid-3">
-      <div class="card"><div class="card-icon">📱</div><h3>UE</h3><p>User Equipment — el dispositivo del usuario que se conecta a la red LTE.</p></div>
-      <div class="card"><div class="card-icon">📶</div><h3>E-UTRAN</h3><p>Red de acceso radio formada por estaciones base llamadas <strong style="color:var(--text);">eNodeB</strong>.</p></div>
-      <div class="card"><div class="card-icon">☁️</div><h3>EPC</h3><p>Evolved Packet Core — núcleo de red orientado a paquetes IP.</p></div>
-    </div>
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem;">
-      <span class="chip">OFDMA (downlink)</span>
-      <span class="chip">SC-FDMA (uplink)</span>
-      <span class="chip">MIMO</span>
-      <span class="chip">Menor latencia que 3G</span>
-      <span class="chip">Eficiencia espectral mejorada</span>
-      <span class="chip">Arquitectura IP simplificada</span>
-    </div>
-  </div>
-</section>
-
-<!-- TEAMS & QoS -->
-<section id="teams">
-  <div class="fade-in">
-    <div class="section-label">23 & 24 — Colaboración y Calidad</div>
-    <h2 class="section-title">Microsoft Teams & <span>QoS en MPLS</span></h2>
-    <div class="divider"></div>
-    <div class="grid-2">
-      <div class="card">
-        <div class="card-icon">💬</div>
-        <h3>Microsoft Teams</h3>
-        <p>Plataforma de comunicación y colaboración basada en la nube. Usa <strong style="color:var(--text);">TCP/IP</strong> para transmisión de datos y streaming para videollamadas. Optimiza el ancho de banda mediante compresión de audio/video y puede integrarse con políticas de <strong style="color:var(--text);">QoS</strong> para priorizar tráfico en redes corporativas con MPLS. Alternativas: Zoom, Slack.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚖️</div>
-        <h3>QoS en MPLS</h3>
-        <p>Aplicar calidad de servicio en MPLS significa priorizar tráfico crítico (voz, video) sobre otros datos. Se logra mediante clasificación y marcado del tráfico con valores <strong style="color:var(--text);">DSCP</strong>. MPLS facilita este proceso con su enrutamiento eficiente por etiquetas, mientras que QoS gestiona la prioridad para evitar congestiones y garantizar el rendimiento de aplicaciones sensibles al retardo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CABLES -->
-<section id="cables">
-  <div class="fade-in">
-    <div class="section-label">25 — Medios Físicos</div>
-    <h2 class="section-title">Coaxial, UTP y <span>Fibra Óptica</span></h2>
-    <div class="divider"></div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Característica</th><th>Coaxial</th><th>UTP</th><th>Fibra Óptica</th></tr></thead>
-        <tbody>
-          <tr><td>Material</td><td>Cobre</td><td>Cobre</td><td style="color:var(--accent3);">Hilos de vidrio</td></tr>
-          <tr><td>Simetría</td><td>Asimétrico</td><td>Simétrico (&lt;100m)</td><td style="color:var(--accent3);">Simétrico</td></tr>
-          <tr><td>Velocidad</td><td>Alta (fuera de hora pico)</td><td>Alta (&lt;100 metros)</td><td style="color:var(--accent3);">Alta en todo momento</td></tr>
-          <tr><td>Interferencias</td><td style="color:#ffa94d;">Susceptible</td><td style="color:#ffa94d;">Susceptible</td><td style="color:var(--accent3);">Inmune EM</td></tr>
-          <tr><td>Distancia</td><td>Media</td><td style="color:#ff6b6b;">Muy corta</td><td style="color:var(--accent3);">Larga</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- CISCO -->
-<section id="cisco">
-  <div class="fade-in">
-    <div class="section-label">26 — Certificaciones</div>
-    <h2 class="section-title">Certificaciones <span>Cisco</span></h2>
-    <div class="divider"></div>
-    <div class="grid-3" style="margin-bottom:1.5rem;">
-      <div class="card" style="border-color:rgba(0,229,255,.25);">
-        <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);margin-bottom:.5rem;">CCENT</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Nivel inicial. Valida conocimientos básicos: conectividad, direccionamiento IP y configuración simple de dispositivos.</p>
-      </div>
-      <div class="card" style="border-color:rgba(0,255,148,.25);">
-        <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent3);margin-bottom:.5rem;">CCNA</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Nivel intermedio. Instalar, configurar y administrar redes pequeñas y medianas: routing, switching, seguridad básica y troubleshooting.</p>
-      </div>
-      <div class="card" style="border-color:rgba(123,97,255,.25);">
-        <div style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent2);margin-bottom:.5rem;">CCNP</div>
-        <p style="font-size:.85rem;color:var(--text-muted);">Nivel avanzado. Diseñar, implementar y gestionar redes complejas con mayor profundidad en protocolos y soluciones empresariales.</p>
-      </div>
-    </div>
-    <div class="grid-2">
-      <div class="highlight">
-        <h3>Track: Routing & Switching</h3>
-        <p>Diseño, configuración y administración de redes cableadas. Incluye routers, switches, protocolos de enrutamiento (OSPF, EIGRP) y segmentación de redes.</p>
-      </div>
-      <div class="highlight">
-        <h3>Track: Security</h3>
-        <p>Protección de redes: firewalls, VPNs, control de accesos y detección de amenazas. Garantiza integridad y confidencialidad de la información.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OSI -->
-<section id="osi">
-  <div class="fade-in">
-    <div class="section-label">27 — Modelo de Referencia</div>
-    <h2 class="section-title">Modelo <span>OSI</span></h2>
-    <div class="divider"></div>
-    <p style="color:var(--text-muted);font-size:.92rem;line-height:1.8;margin-bottom:2rem;">El modelo OSI (Open Systems Interconnection) divide las funciones de comunicación en 7 capas, proporcionando un lenguaje universal para redes informáticas. Las capas superiores se benefician de la abstracción de las inferiores.</p>
-    <div style="display:flex;flex-direction:column;gap:.4rem;max-width:600px;">
-      <div class="packet-layer" style="background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.25);">
-        <div class="layer-name" style="color:#ff6b6b;">7. Aplicación</div>
-        <div class="layer-fields"><span class="field">HTTP · FTP · SMTP · DNS</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(255,169,77,.07);border:1px solid rgba(255,169,77,.25);">
-        <div class="layer-name" style="color:#ffa94d;">6. Presentación</div>
-        <div class="layer-fields"><span class="field">Cifrado · Compresión · Formato</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(255,212,59,.07);border:1px solid rgba(255,212,59,.25);">
-        <div class="layer-name" style="color:#ffd43b;">5. Sesión</div>
-        <div class="layer-fields"><span class="field">NetBIOS · RPC · Gestión de sesiones</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(0,255,148,.07);border:1px solid rgba(0,255,148,.25);">
-        <div class="layer-name" style="color:#00ff94;">4. Transporte</div>
-        <div class="layer-fields"><span class="field">TCP · UDP · Puertos · Segmentación</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.25);">
-        <div class="layer-name" style="color:#00e5ff;">3. Red</div>
-        <div class="layer-fields"><span class="field">IP · OSPF · ARP · Routing</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(123,97,255,.07);border:1px solid rgba(123,97,255,.25);">
-        <div class="layer-name" style="color:#a78bfa;">2. Enlace de Datos</div>
-        <div class="layer-fields"><span class="field">Ethernet · Switch · MAC · VLAN · STP</span></div>
-      </div>
-      <div class="packet-layer" style="background:rgba(200,150,255,.07);border:1px solid rgba(200,150,255,.2);">
-        <div class="layer-name" style="color:#d4b8ff;">1. Física</div>
-        <div class="layer-fields"><span class="field">Hub · Repetidor · Cables · Señales</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IEEE -->
-<section id="ieee">
-  <div class="fade-in">
-    <div class="section-label">28 & 29 — Estándares IEEE</div>
-    <h2 class="section-title">Estándares <span>IEEE 802</span></h2>
-    <div class="divider"></div>
-    <div class="grid-2">
-      <div class="card">
-        <div style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">IEEE 802.3 — Ethernet</div>
-        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem;">Define el funcionamiento de redes Ethernet cableadas. Se implementa con cables UTP o fibra óptica y utiliza un modelo de comunicación basado en tramas.</p>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-          <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Bajo costo</span>
-          <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Alta velocidad</span>
-          <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Amplia adopción</span>
-          <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Requiere cableado</span>
-          <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Interferencias (cobre)</span>
+        <div class="card" style="border-color:rgba(0,229,255,.3); text-align: center;">
+          <div
+            style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">
+            Cristian Ozuna</div>
+          <div class="card-div-opinion" style="display:flex;flex-direction:column;gap:.5rem;">
+            <div class="cont-img-opinion">
+              <img src="https://avatars.githubusercontent.com/u/100244092?v=4">
+            </div>
+            <p style="text-align: left;">Hoy por hoy mi experiencia no es amplia en términos laborales, pero sí tengo
+              práctica en configuración básica de routers con DHCP y en resolver cuestiones de conectividad para
+              familiares, amigos o entornos chicos. Diría que tengo bastante curiosidad por el tema. Justamente eso fue
+              lo que también me llevó a interesarme por las redes Wi-Fi, sus canales, el tráfico, la criptografía y la
+              evolución de sus mecanismos de cifrado, desde WEP hasta WPA, WPA2 y WPA3.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div style="color:var(--accent2);font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;margin-bottom:.8rem;">IEEE 802.4 — Token Bus</div>
-        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem;">Define redes tipo Token Bus. Implementa una red lógica en anillo con paso de testigo sobre cable coaxial. Solo el dispositivo que posee el token puede transmitir, evitando colisiones.</p>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-          <span class="chip" style="color:var(--accent3);border-color:rgba(0,255,148,.3);">✓ Sin colisiones</span>
-          <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Mayor latencia</span>
-          <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ Complejo</span>
-          <span class="chip" style="color:#ff6b6b;border-color:rgba(255,107,107,.3);">✗ En desuso</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CORREO -->
-<section id="correo">
-  <div class="fade-in">
-    <div class="section-label">30 & 31 — Mensajería Electrónica</div>
-    <h2 class="section-title">Protocolos de <span>Correo</span></h2>
-    <div class="divider"></div>
-    <div class="grid-3">
-      <div class="card" style="border-color:rgba(255,107,107,.25);">
-        <div class="card-icon">📤</div>
-        <h3>SMTP</h3>
-        <p>Simple Mail Transfer Protocol. Se usa para el <strong style="color:var(--text);">envío</strong> de correos electrónicos entre servidores de correo. Puerto 25 / 587.</p>
-      </div>
-      <div class="card" style="border-color:rgba(0,229,255,.25);">
-        <div class="card-icon">📥</div>
-        <h3>POP3</h3>
-        <p>Post Office Protocol v3. Para <strong style="color:var(--text);">recepción</strong> de correos. Descarga los mensajes al cliente y los elimina del servidor. Puerto 110.</p>
-      </div>
-      <div class="card" style="border-color:rgba(0,255,148,.25);">
-        <div class="card-icon">🔄</div>
-        <h3>IMAP</h3>
-        <p>Internet Message Access Protocol. Recepción con <strong style="color:var(--text);">sincronización</strong>: los mensajes permanecen en el servidor accesibles desde múltiples dispositivos. Puerto 143.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer>
+    <div style="margin-bottom:.5rem;color:var(--accent);">// FIN DEL TRABAJO PRÁCTICO</div>
+    Leonel · Cristian · Diego · Redes y Tecnología · 2025
+  </footer>
 
-<!-- IPv4 vs IPv6 -->
-<section id="ipv">
-  <div class="fade-in">
-    <div class="section-label">32 — Direccionamiento IP</div>
-    <h2 class="section-title"><span>IPv4</span> vs IPv6</h2>
-    <div class="divider"></div>
-    <div class="grid-2">
-      <div class="card" style="border-color:rgba(0,229,255,.3);">
-        <div style="color:var(--accent);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">IPv4</div>
-        <div style="display:flex;flex-direction:column;gap:.5rem;">
-          <div style="font-size:.88rem;color:var(--text-muted);">📏 <strong style="color:var(--text);">32 bits</strong> de longitud</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">🔢 Formato decimal separado por puntos</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">📦 ~4.300 millones de direcciones</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">🔄 Requiere <strong style="color:var(--text);">NAT</strong> para escalar</div>
-          <div style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:.5rem;">192.168.1.1</div>
-        </div>
-      </div>
-      <div class="card" style="border-color:rgba(0,255,148,.3);">
-        <div style="color:var(--accent3);font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;margin-bottom:.8rem;">IPv6</div>
-        <div style="display:flex;flex-direction:column;gap:.5rem;">
-          <div style="font-size:.88rem;color:var(--text-muted);">📏 <strong style="color:var(--text);">128 bits</strong> de longitud</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">🔡 Formato hexadecimal separado por ":"</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">📦 340 undecillones de direcciones</div>
-          <div style="font-size:.88rem;color:var(--text-muted);">✅ Elimina la necesidad de <strong style="color:var(--text);">NAT</strong></div>
-          <div style="font-size:.88rem;color:var(--text-muted);">🔒 Mayor seguridad y escalabilidad</div>
-          <div style="font-family:'Space Mono',monospace;font-size:.72rem;color:var(--accent3);margin-top:.5rem;">2001:0db8:85a3::8a2e:0370:7334</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <script src="/script.js">
 
-<footer>
-  <div style="margin-bottom:.5rem;color:var(--accent);">// FIN DEL TRABAJO PRÁCTICO</div>
-  Leonel Rodriguez · Cristian · Diego · Redes y Tecnología · 2025
-</footer>
-
-<script src="/script.js">
-
-</script>
+  </script>
 </body>
+
 </html>

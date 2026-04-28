@@ -289,6 +289,18 @@
     border-radius:6px; padding:.2rem .5rem; font-size:.68rem; color:var(--text-muted);
   }
 
+.cont-img-opinion{
+  width: 10em; 
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cont-img-opinion img{
+  width: 100%;
+}
+.card-div-opinion{
+  justify-content: center;
+  align-items: center;
+}
   /* ── FOOTER ── */
   footer {
     text-align:center; padding:3rem 2rem;
